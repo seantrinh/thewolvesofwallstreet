@@ -66,3 +66,8 @@ Three files with the python file in PyCharm needed to run
 in python file
 import shift
 ...then start working
+
+go to pycharm and change interpretor to docker image then run python file?
+
+change demoClient to test001 or something
+then run and should connect, after do whatever
