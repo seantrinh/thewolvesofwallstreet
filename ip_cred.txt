@@ -21,3 +21,10 @@ Can go into browser and paste in IP
 ./startup.sh -d YYYY-MM-DD
 
 use -k flag to clean it up?
+
+
+
+
+
+Navigate to shift-python folder
+docker-compose build
