@@ -56,3 +56,13 @@ shift package, apply (only once, good to go after)
 then use python normally
 
 jupyter notebooks will be stored in the shift-python folder
+
+FIX50....xml
+FIX11....xml
+initiator.cfg
+Three files with the python file in PyCharm needed to run
+	Again, modify the initiator with the IP address of the VM (socket connect host)
+
+in python file
+import shift
+...then start working
