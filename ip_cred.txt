@@ -41,7 +41,7 @@ URL (choose one of them), copy it to browser OR localhost:8888
 
 	once you log in, jupyter notebook
 
-	initiator.cfg? -> change 1 item to ip address of VM, save it
+	initiator.cfg? -> change 1 item to ip address of VM, save it; Make sure VM and service is running
 	
 	open top link to see it works; replace 2nd line with test001?
 
