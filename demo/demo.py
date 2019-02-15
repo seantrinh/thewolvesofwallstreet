@@ -218,7 +218,7 @@ def demo11(trader):
 
 def main(argv):
     # create trader object
-    trader = shift.Trader("democlient")
+    trader = shift.Trader("test001")
 
     # connect and subscribe to all available order books
     try:
