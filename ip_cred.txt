@@ -71,3 +71,5 @@ go to pycharm and change interpretor to docker image then run python file?
 
 change demoClient to test001 or something
 then run and should connect, after do whatever
+
+use python 3.7, tensorflow only works 3.6?
