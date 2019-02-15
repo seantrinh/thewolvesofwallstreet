@@ -11,3 +11,9 @@ test001
 ...
 
 test010 (password: password)
+
+ssh myteam@155.246.104.113
+
+cd SHIFT/
+./startup.sh
+Can go into browser and paste in IP
