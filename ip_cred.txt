@@ -28,3 +28,29 @@ use -k flag to clean it up?
 
 Navigate to shift-python folder
 docker-compose build
+
+
+CHANGE PASSWORD
+
+docker-compose up
+URL (choose one of them), copy it to browser OR localhost:8888
+	copy token , put it in Token
+	type password
+
+	next time, just need password next time you go to localhost:8888
+
+	once you log in, jupyter notebook
+
+	initiator.cfg? -> change 1 item to ip address of VM, save it
+	
+	open top link to see it works; replace 2nd line with test001?
+
+	use to submit orders
+
+	can use jupyter to test
+
+go to the github and download the whole thing, he'll zip it and then download it 
+preferences, project options, name of project, project interpretor, add, add docker server/image?
+pycharm docker image preferences and then something
+shift package, apply (only once, good to go after)
+then use python normally
