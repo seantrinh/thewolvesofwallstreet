@@ -54,3 +54,5 @@ preferences, project options, name of project, project interpretor, add, add doc
 pycharm docker image preferences and then something
 shift package, apply (only once, good to go after)
 then use python normally
+
+jupyter notebooks will be stored in the shift-python folder
