@@ -10,3 +10,9 @@
 	Connected to Req 2: Throw error if not enough
 6. Will implement a stop loss function
 
+Tech
+----
+pandas
+tensorflow, keras - python 3.6*
+sqlite
+
