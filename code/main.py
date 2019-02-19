@@ -69,7 +69,11 @@ def main(argv):
 
     #EXECUTE METHODS
     demo01(trader)
-    time.sleep(10)
+    '''
+        Step 1:
+            
+    '''
+    #time.sleep(10)
     #demo05(trader)
     # Step 1 - Collect data for ARIMA, every couple of seconds (total 5 minutes)
     #   Test the ideal interval to collect data for ARIMA
