@@ -38,8 +38,10 @@ COMPANIES = ['MMM','AXP','AAPL','BA','CAT','CVX','CSCO','KO',
              'JPM','MCD','MRK','MSFT','NKE','PFE','PG','TRV',
              'UTX','UNH','VZ','V','WMT','WBA'] #Sticker symboles of companies in the Dow Jones
 NUM_COMPANIES = 30 #Number of companies in the Dow Jones
-MIN_TRANSACTIONS = 10 #Minimum number of transactions that need to be included to avoid $100,000 penatly
+MIN_TRANSACTIONS = 10 #Minimum number of transactions that need to be included to avoid $100,000 penalty
 #NUM_ARIMA = x #Size of the ARIMA dataset
+
+account_balance = 1000000.00 #Beginning account balance, adjust as necessary
 
 def demo01(trader):
     """
