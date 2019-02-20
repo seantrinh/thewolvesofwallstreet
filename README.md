@@ -5,8 +5,11 @@ Spring 2019. For questions about the competition itself, please contact algotrad
 
 ## Tech Used
 
-* **SHIFT API** - *See https://github.com/hanlonlab/shift-python*
+* **SHIFT API** - See https://github.com/hanlonlab/shift-python
 * **Python**
+* **Docker**
+* **PyCharm IDE**
+* **Jupyter Notebook**
 
 ## Authors
 
