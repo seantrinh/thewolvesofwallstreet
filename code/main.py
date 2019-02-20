@@ -1,8 +1,45 @@
-# Aaron John, Sean Trinh, Hariharan Vijayachandran
+'''
+    @authors: Aaron John, Sean Trinh, Hariharan Vijayachandran
+
+    Step 0:
+        Connect
+
+    Step 1:
+	    Collect data (every few seconds for one iteration) until you get a set amount of dataset
+
+    Step 2:
+	    While it’s still earlier than (insert time here):
+		    Calculate ARIMA for all 30
+		    Check thresholds
+			    Execute trades accordingly if thresholds are met
+				    If buying, check to see if we have the correct balance
+			    Insert pending and successful transactions into log (SQL)
+			    Update inventory
+
+    Step 3:
+	    Once it is the specified time or later:
+		    Make sure you have done the required number of trades (if not, do instant trades)
+			    Execute 10 or $100,000 penalty
+		    Market sell
+		    Cancel all pending orders
+		    Update log of market sell and cancel pending orders
+
+    Step 4:
+        Disconnect
+
+'''
 
 import shift
 import sys
 import time
+
+COMPANIES = ['MMM','AXP','AAPL','BA','CAT','CVX','CSCO','KO',
+             'DIS','DWDP','XOM','GS','HD','IBM','INTC','JNJ',
+             'JPM','MCD','MRK','MSFT','NKE','PFE','PG','TRV',
+             'UTX','UNH','VZ','V','WMT','WBA'] #Sticker symboles of companies in the Dow Jones
+NUM_COMPANIES = 30 #Number of companies in the Dow Jones
+MIN_TRANSACTIONS = 10 #Minimum number of transactions that need to be included to avoid $100,000 penatly
+#NUM_ARIMA = x #Size of the ARIMA dataset
 
 def demo01(trader):
     """
@@ -55,6 +92,9 @@ def demo05(trader):
     return
 
 def main(argv):
+    '''
+    STEP 0
+    '''
     # create trader object
     trader = shift.Trader("test001") #Change this?
 
@@ -67,30 +107,47 @@ def main(argv):
     except shift.ConnectionTimeout as e:
         print(e)
 
+    '''
+    STEP 1
+    '''
+    #Create PortfolioItems for each company?
+    #Create PortfolioSummary
+
+    '''
+    STEP 2
+    '''
     #EXECUTE METHODS
-    demo01(trader)
-    '''
-        Step 1:
-            
-    '''
+    #demo01(trader)
     #time.sleep(10)
     #demo05(trader)
-    # Step 1 - Collect data for ARIMA, every couple of seconds (total 5 minutes)
-    #   Test the ideal interval to collect data for ARIMA
 
-    # Step 2 - Buy and selling/ Executing off the data
-    # while (earlier than 3:45)
-    #   buy and sell based on our parameters
-    #   Make sure we have the money
+    '''
+    STEP 3
+    '''
+    #Do this at 3:45?
+    num_executed_transactions = trader.getSubmittedOrdersSize - trader.getWaitingListSize
+    if num_executed_transactions < MIN_TRANSACTIONS:
+        # getSubmittedOrdersSize returns # transactions both executed & not executed, excluding cancellation requests
+        # getWaitingListSize returns # transactions not executed
 
-    # Step 3 - 3:45
-    #   Market Sell
+        for i in range((MIN_TRANSACTIONS - num_executed_transactions)/2):
+            #buy and then sell? (Count for 2)
 
-    # Step 4 - At tne end of the day, cancel all pending orders
-    trader.cancelAllPendingOrders()
+    for company in COMPANIES:
+        # Price? Long and short?
+        portfolio_item = trader.getPortfolioItem(company)
+        num_shares = portfolio_item.getShares()
+        trader.submitOrder(shift.Order(shift.Order.MARKET_SELL,company,size=num_shares,price=0.0)) #Change size and price
+        #Update log with transaction
 
-    #Disconnect
-    trader.disconnect()
+    #Do this at 3:59?
+    trader.cancelAllPendingOrders() #Cancel all pending orders
+    #Update log
+
+    '''
+    STEP 4
+    '''
+    trader.disconnect() #Disconnect
 
 if __name__ == "__main__":
     main(sys.argv)
