@@ -139,7 +139,7 @@ def main(argv):
         # Price? Long and short?
         portfolio_item = trader.getPortfolioItem(company)
         num_shares = portfolio_item.getShares()
-        trader.submitOrder(shift.Order(shift.Order.MARKET_SELL,company,size=num_shares,price=0.0)) #Change size and price
+        trader.submitOrder(shift.Order(shift.Order.MARKET_SELL,company,size=num_shares)) #Sell at market price
         #Update log with transaction
 
     #Do this at 3:59?
