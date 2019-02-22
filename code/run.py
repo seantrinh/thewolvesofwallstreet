@@ -32,6 +32,7 @@
 import shift
 import sys
 import time
+import random
 
 COMPANIES = ['MMM','AXP','AAPL','BA','CAT','CVX','CSCO','KO',
              'DIS','DWDP','XOM','GS','HD','IBM','INTC','JNJ',
@@ -166,9 +167,16 @@ def main(argv):
         # getSubmittedOrdersSize returns # transactions both executed & not executed, excluding cancellation requests
         # getWaitingListSize returns # transactions not executed
 
-        for i in range((MIN_TRANSACTIONS - num_executed_transactions)/2):
+        for i in range(int((MIN_TRANSACTIONS - num_executed_transactions)/2)):
             #buy and then sell? (Count for 2)
-            print(0)
+            comp = random.randint(0, 29)
+            company = COMPANIES[comp]
+            trader.submitOrder(shift.Order(shift.Order.MARKET_BUY, company, size=1))
+            demo07(trader)
+            time.sleep(10)
+            trader.submitOrder(shift.Order(shift.Order.MARKET_SELL, company, size=1))
+            demo07(trader)
+            time.sleep(10)
 
     for company in COMPANIES:
         # Price? Long and short?

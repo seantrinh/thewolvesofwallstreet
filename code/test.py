@@ -124,7 +124,7 @@ def main(argv):
     '''
     STEP 2
     '''
-    #EXECUTE METHODS
+    EXECUTE METHODS
     while time.time() - start < 500: # 22500 corresponds to 3:45
         #Execute trades and stuff
         print("Transaction initiated")
@@ -132,7 +132,7 @@ def main(argv):
         company = COMPANIES[comp]
         trader.submitOrder(shift.Order(shift.Order.MARKET_BUY,company,size=1))
         demo07(trader)
-        time.sleep(10)
+        time.sleep(120)
         trader.submitOrder(shift.Order(shift.Order.MARKET_SELL,company,size=1))
         demo07(trader)
         time.sleep(10)
@@ -140,20 +140,20 @@ def main(argv):
     '''
     STEP 3
     '''
-    num_executed_transactions = trader.getSubmittedOrdersSize - trader.getWaitingListSize
+    num_executed_transactions = trader.getSubmittedOrdersSize() - trader.getWaitingListSize()
     if num_executed_transactions < MIN_TRANSACTIONS:
         # getSubmittedOrdersSize returns # transactions both executed & not executed, excluding cancellation requests
         # getWaitingListSize returns # transactions not executed
 
-        for i in range((MIN_TRANSACTIONS - num_executed_transactions)/2):
+        for i in range(int((MIN_TRANSACTIONS - num_executed_transactions)/2)):
             #buy and then sell? (Count for 2)
             comp = random.randint(0, 29)
             company = COMPANIES[comp]
             trader.submitOrder(shift.Order(shift.Order.MARKET_BUY, company,size=1))
-            demo07()
-            time.sleep(120)
+            demo07(trader)
+            time.sleep(10)
             trader.submitOrder(shift.Order(shift.Order.MARKET_SELL, company,size=1))
-            demo07()
+            demo07(trader)
             time.sleep(10)
 
 
@@ -164,9 +164,9 @@ def main(argv):
         trader.submitOrder(shift.Order(shift.Order.MARKET_SELL,company,size=num_shares)) #Sell at market price
         #Update log with transaction
 
-    trader.getPortfolioSummary()
+    demo07(trader)
     #Do this at 3:59?
-    if time.time() - start >= 540: # 23328 corresponds to 3:59ish
+    if time.time() - start >= 560: # 23328 corresponds to 3:59ish
         #trader.cancelAllPendingOrders() #Cancel all pending orders
         demo05(trader)
         #Update log
