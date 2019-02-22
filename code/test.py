@@ -1,6 +1,7 @@
 import shift
 import sys
 import time
+import random
 
 COMPANIES = ['MMM','AXP','AAPL','BA','CAT','CVX','CSCO','KO',
              'DIS','DWDP','XOM','GS','HD','IBM','INTC','JNJ',
@@ -62,6 +63,40 @@ def demo05(trader):
 
     return
 
+def demo07(trader):
+    """
+    This method provides information on the structure of PortfolioSummary and PortfolioItem objects:
+     getPortfolioSummary() returns a PortfolioSummary object with the following data:
+     1. Total Buying Power (totalBP)
+     2. Total Shares (totalShares)
+     3. Total Realized Profit/Loss (totalRealizedPL)
+     4. Timestamp of Last Update (timestamp)
+
+     getPortfolioItems() returns a dictionary with "symbol" as keys and PortfolioItem as values, with each providing the following information:
+     1. Symbol (getSymbol())
+     2. Shares (getShares())
+     3. Price (getPrice())
+     4. Realized Profit/Loss (getRealizedPL())
+     5. Timestamp of Last Update (getTimestamp())
+    :param trader:
+    :return:
+    """
+
+    print("Buying Power\tTotal Shares\tTotal P&L\tTimestamp")
+    print("%12.2f\t%12d\t%9.2f\t%26s" % (trader.getPortfolioSummary().getTotalBP(),
+                                       trader.getPortfolioSummary().getTotalShares(),
+                                       trader.getPortfolioSummary().getTotalRealizedPL(),
+                                       trader.getPortfolioSummary().getTimestamp()))
+
+    print()
+
+    print("Symbol\t\tShares\t\tPrice\t\tP&L\t\tTimestamp")
+    for item in trader.getPortfolioItems().values():
+        print("%6s\t\t%6d\t%9.2f\t%7.2f\t\t%26s" %
+              (item.getSymbol(), item.getShares(), item.getPrice(), item.getRealizedPL(), item.getTimestamp()))
+
+    return
+
 def main(argv):
     '''
     STEP 0
@@ -92,7 +127,16 @@ def main(argv):
     #EXECUTE METHODS
     while time.time() - start < 500: # 22500 corresponds to 3:45
         #Execute trades and stuff
-        
+        print("Transaction initiated")
+        comp = random.randint(0,29)
+        company = COMPANIES[comp]
+        trader.submitOrder(shift.Order(shift.Order.MARKET_BUY,company,size=1))
+        demo07(trader)
+        time.sleep(10)
+        trader.submitOrder(shift.Order(shift.Order.MARKET_SELL,company,size=1))
+        demo07(trader)
+        time.sleep(10)
+
     '''
     STEP 3
     '''
@@ -103,6 +147,15 @@ def main(argv):
 
         for i in range((MIN_TRANSACTIONS - num_executed_transactions)/2):
             #buy and then sell? (Count for 2)
+            comp = random.randint(0, 29)
+            company = COMPANIES[comp]
+            trader.submitOrder(shift.Order(shift.Order.MARKET_BUY, company,size=1))
+            demo07()
+            time.sleep(120)
+            trader.submitOrder(shift.Order(shift.Order.MARKET_SELL, company,size=1))
+            demo07()
+            time.sleep(10)
+
 
     for company in COMPANIES:
         # Price? Long and short?
@@ -111,6 +164,7 @@ def main(argv):
         trader.submitOrder(shift.Order(shift.Order.MARKET_SELL,company,size=num_shares)) #Sell at market price
         #Update log with transaction
 
+    trader.getPortfolioSummary()
     #Do this at 3:59?
     if time.time() - start >= 540: # 23328 corresponds to 3:59ish
         #trader.cancelAllPendingOrders() #Cancel all pending orders

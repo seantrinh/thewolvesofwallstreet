@@ -229,13 +229,14 @@ def main(argv):
     except shift.ConnectionTimeout as e:
         print(e)
 
-    # demo01(trader)
+    demo01(trader)
     # demo02(trader)
     # demo03(trader)
     # demo04(trader)
     # demo05(trader)
     # demo06(trader)
-    # demo07(trader)
+    demo07(trader)
+    demo05(trader)
     # demo08(trader)
     # demo09(trader)
     # demo10(trader)
