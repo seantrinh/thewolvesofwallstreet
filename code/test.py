@@ -1,34 +1,3 @@
-'''
-    @authors: Aaron John, Sean Trinh, Hariharan Vijayachandran
-
-    Step 0:
-        Connect
-
-    Step 1:
-	    Collect data (every few seconds for one iteration) until you get a set amount of dataset
-
-    Step 2:
-	    While it’s still earlier than (insert time here):
-		    Calculate ARIMA for all 30
-		    Check thresholds
-			    Execute trades accordingly if thresholds are met
-				    If buying, check to see if we have the correct balance
-			    Insert pending and successful transactions into log (SQL)
-			    Update inventory
-
-    Step 3:
-	    Once it is the specified time or later:
-		    Make sure you have done the required number of trades (if not, do instant trades)
-			    Execute 10 or $100,000 penalty
-		    Market sell
-		    Cancel all pending orders
-		    Update log of market sell and cancel pending orders
-
-    Step 4:
-        Disconnect
-
-'''
-
 import shift
 import sys
 import time
@@ -121,12 +90,12 @@ def main(argv):
     STEP 2
     '''
     #EXECUTE METHODS
-    while time.time() - start < 22500: # 22500 corresponds to 3:45
+    while time.time() - start < 500: # 22500 corresponds to 3:45
         #Execute trades and stuff
+        
     '''
     STEP 3
     '''
-    #Time is now past 3:45
     num_executed_transactions = trader.getSubmittedOrdersSize - trader.getWaitingListSize
     if num_executed_transactions < MIN_TRANSACTIONS:
         # getSubmittedOrdersSize returns # transactions both executed & not executed, excluding cancellation requests
@@ -143,7 +112,7 @@ def main(argv):
         #Update log with transaction
 
     #Do this at 3:59?
-    if time.time() - start >= 23328: # 23328 corresponds to 3:59ish
+    if time.time() - start >= 540: # 23328 corresponds to 3:59ish
         #trader.cancelAllPendingOrders() #Cancel all pending orders
         demo05(trader)
         #Update log
