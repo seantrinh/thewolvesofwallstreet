@@ -124,7 +124,7 @@ def main(argv):
     '''
     STEP 2
     '''
-    EXECUTE METHODS
+    #EXECUTE METHODS
     while time.time() - start < 500: # 22500 corresponds to 3:45
         #Execute trades and stuff
         print("Transaction initiated")
@@ -132,7 +132,7 @@ def main(argv):
         company = COMPANIES[comp]
         trader.submitOrder(shift.Order(shift.Order.MARKET_BUY,company,size=1))
         demo07(trader)
-        time.sleep(120)
+        time.sleep(60)
         trader.submitOrder(shift.Order(shift.Order.MARKET_SELL,company,size=1))
         demo07(trader)
         time.sleep(10)
@@ -150,11 +150,11 @@ def main(argv):
             comp = random.randint(0, 29)
             company = COMPANIES[comp]
             trader.submitOrder(shift.Order(shift.Order.MARKET_BUY, company,size=1))
-            demo07(trader)
             time.sleep(10)
+            demo07(trader)
             trader.submitOrder(shift.Order(shift.Order.MARKET_SELL, company,size=1))
-            demo07(trader)
             time.sleep(10)
+            demo07(trader)
 
 
     for company in COMPANIES:
@@ -167,6 +167,7 @@ def main(argv):
     demo07(trader)
     #Do this at 3:59?
     if time.time() - start >= 560: # 23328 corresponds to 3:59ish
+        #Need to change if statement
         #trader.cancelAllPendingOrders() #Cancel all pending orders
         demo05(trader)
         #Update log

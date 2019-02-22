@@ -172,11 +172,11 @@ def main(argv):
             comp = random.randint(0, 29)
             company = COMPANIES[comp]
             trader.submitOrder(shift.Order(shift.Order.MARKET_BUY, company, size=1))
-            demo07(trader)
             time.sleep(10)
+            demo07(trader)
             trader.submitOrder(shift.Order(shift.Order.MARKET_SELL, company, size=1))
-            demo07(trader)
             time.sleep(10)
+            demo07(trader)
 
     for company in COMPANIES:
         # Price? Long and short?
@@ -187,6 +187,7 @@ def main(argv):
 
     #Do this at 3:59?
     if time.time() - start >= 23328: # 23328 corresponds to 3:59ish
+        #Change if statement
         #trader.cancelAllPendingOrders() #Cancel all pending orders
         demo05(trader)
         #Update log
