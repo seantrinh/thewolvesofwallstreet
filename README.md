@@ -5,7 +5,7 @@ Spring 2019. For questions about the competition itself, please contact algotrad
 
 ## Note for Thiago
 
-The main Python script to run is located in the 'code' folder, under 'main.py'.
+The main Python script to run is located in the 'code' folder, under 'run.py'.
 
 ## Tech Used
 
