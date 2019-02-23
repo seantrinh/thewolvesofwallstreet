@@ -38,7 +38,7 @@ import keras
 COMPANIES = ['MMM','AXP','AAPL','BA','CAT','CVX','CSCO','KO',
              'DIS','DWDP','XOM','GS','HD','IBM','INTC','JNJ',
              'JPM','MCD','MRK','MSFT','NKE','PFE','PG','TRV',
-             'UTX','UNH','VZ','V','WMT','WBA'] #Sticker symboles of companies in the Dow Jones
+             'UTX','UNH','VZ','V','WMT','WBA'] #Sticker symbols of companies in the Dow Jones
 NUM_COMPANIES = 30 #Number of companies in the Dow Jones
 MIN_TRANSACTIONS = 10 #Minimum number of transactions that need to be included to avoid $100,000 penalty
 #NUM_ARIMA = x #Size of the ARIMA dataset
@@ -57,7 +57,7 @@ def demo01(trader):
 
     return
 
-def demo05(trader):
+def cancelAllPendingOrders(trader):
     """
     This method cancels all the orders in the waiting list.
     :param trader:
@@ -94,7 +94,8 @@ def demo05(trader):
     print("Waiting list size: " + str(trader.getWaitingListSize()))
 
     return
-def demo07(trader):
+
+def printSummary(trader):
     """
     This method provides information on the structure of PortfolioSummary and PortfolioItem objects:
      getPortfolioSummary() returns a PortfolioSummary object with the following data:
@@ -169,15 +170,15 @@ def main(argv):
         # getWaitingListSize returns # transactions not executed
 
         for i in range(int((MIN_TRANSACTIONS - num_executed_transactions)/2)):
-            #buy and then sell? (Count for 2)
+            #buy and then sell, both at market price
             comp = random.randint(0, 29)
             company = COMPANIES[comp]
             trader.submitOrder(shift.Order(shift.Order.MARKET_BUY, company, size=1))
             time.sleep(10)
-            demo07(trader)
+            printSummary(trader)
             trader.submitOrder(shift.Order(shift.Order.MARKET_SELL, company, size=1))
             time.sleep(10)
-            demo07(trader)
+            printSummary(trader)
 
     for company in COMPANIES:
         # Price? Long and short?
@@ -187,11 +188,16 @@ def main(argv):
         #Update log with transaction
 
     #Do this at 3:59?
-    if time.time() - start >= 23328: # 23328 corresponds to 3:59ish
-        #Change if statement
+    cancelAllPendingOrders(trader)
+
+    #Update log
+
+    #Print summary
+    printSummary(trader)
+
+    #if time.time() - start >= 23328: # 23328 corresponds to 3:59ish
         #trader.cancelAllPendingOrders() #Cancel all pending orders
-        demo05(trader)
-        #Update log
+        #demo05(trader)
 
     '''
     STEP 4
