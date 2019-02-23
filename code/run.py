@@ -171,7 +171,7 @@ def main(argv):
 
         for i in range(int((MIN_TRANSACTIONS - num_executed_transactions)/2)):
             #buy and then sell, both at market price
-            comp = random.randint(0, 29)
+            comp = random.randint(0, NUM_COMPANIES - 1)
             company = COMPANIES[comp]
             trader.submitOrder(shift.Order(shift.Order.MARKET_BUY, company, size=1))
             time.sleep(10)
