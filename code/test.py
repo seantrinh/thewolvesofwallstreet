@@ -2,6 +2,7 @@ import shift
 import sys
 import time
 import random
+import keras
 
 COMPANIES = ['MMM','AXP','AAPL','BA','CAT','CVX','CSCO','KO',
              'DIS','DWDP','XOM','GS','HD','IBM','INTC','JNJ',
