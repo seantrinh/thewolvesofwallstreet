@@ -29,21 +29,38 @@
 
 '''
 
+
 import shift
 import sys
 import time
-import random
-import keras
+import pandas as pd
+from statsmodels.tsa.arima_model import ARIMA
+
+
 
 COMPANIES = ['MMM','AXP','AAPL','BA','CAT','CVX','CSCO','KO',
              'DIS','DWDP','XOM','GS','HD','IBM','INTC','JNJ',
              'JPM','MCD','MRK','MSFT','NKE','PFE','PG','TRV',
-             'UTX','UNH','VZ','V','WMT','WBA'] #Sticker symbols of companies in the Dow Jones
+             'UTX','UNH','VZ','V','WMT','WBA']
+#Sticker symbols of companies in the Dow Jones
+
 NUM_COMPANIES = 30 #Number of companies in the Dow Jones
 MIN_TRANSACTIONS = 10 #Minimum number of transactions that need to be included to avoid $100,000 penalty
 #NUM_ARIMA = x #Size of the ARIMA dataset
 
 account_balance = 1000000.00 #Beginning account balance, adjust as necessary
+BUFFER_SIZE = 50
+class Stock:
+    def __init__(self,comp_name):
+        self.name = comp_name
+
+    def add_data(self,price):
+
+        self.price = price
+
+
+
+
 
 def demo01(trader):
     """
@@ -157,9 +174,42 @@ def main(argv):
     STEP 2
     '''
     #EXECUTE METHODS
+    stock_data = []
+    # for company in COMPANIES:
+    #     stock_data.append(Stock(company))
+    stock_data.append(Stock(COMPANIES[1]))
+
     while time.time() - start < 22500: # 22500 corresponds to 3:45
         #Execute trades and stuff
+        flag = trader.requestSamplePrices([COMPANIES[1]])
+        s = time.time()
+        while not flag:
+            flag=trader.requestSamplePrices([COMPANIES[1]])
+        print("True connection"+str(time.time()-s))
+        s = time.time()
+        for stk in stock_data:
+
+            sample = trader.getSamplePrices(stk.name, midPrices=True)
+
+            s = time.time()
+            while(len(sample)<31):
+            
+                sample = trader.getSamplePrices(stk.name, midPrices=True)
+            print("got sample at "+str(time.time()-s))
+            s = time.time()
+            stk.add_data(sample)
+            print(sample)
+            print(len(sample))
+            # frame = pd.DataFrame(stk.price)
+            model = ARIMA(stk.price, order = (0,1,0))
+            model_fit = model.fit(disp=0)
+            print("got arima at "+str(time.time()-s))
+            print(model_fit.summary())
+
+        #
+
         print(0)
+
     '''
     STEP 3
     '''
