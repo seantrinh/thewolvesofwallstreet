@@ -55,11 +55,7 @@ class Stock:
         self.name = comp_name
 
     def add_data(self,price):
-
         self.price = price
-
-
-
 
 
 def demo01(trader):
@@ -181,7 +177,7 @@ def main(argv):
 
     while time.time() - start < 22500: # 22500 corresponds to 3:45
         #Execute trades and stuff
-        flag = trader.requestSamplePrices([COMPANIES[1]])
+        flag = trader.requestSamplePrices([COMPANIES[1]]) # Input needs to be a list
         s = time.time()
         while not flag:
             flag=trader.requestSamplePrices([COMPANIES[1]])
@@ -192,7 +188,7 @@ def main(argv):
             sample = trader.getSamplePrices(stk.name, midPrices=True)
 
             s = time.time()
-            while(len(sample)<31):
+            while(len(sample)<31): # Collect 30 data points per company
             
                 sample = trader.getSamplePrices(stk.name, midPrices=True)
             print("got sample at "+str(time.time()-s))
@@ -201,7 +197,7 @@ def main(argv):
             print(sample)
             print(len(sample))
             # frame = pd.DataFrame(stk.price)
-            model = ARIMA(stk.price, order = (0,1,0))
+            model = ARIMA(stk.price, order = (0,1,0)) # Make ARIMA model
             model_fit = model.fit(disp=0)
             print("got arima at "+str(time.time()-s))
             print(model_fit.summary())
