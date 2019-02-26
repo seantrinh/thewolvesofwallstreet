@@ -143,6 +143,11 @@ def printSummary(trader):
 
     return
 
+def requestPrices(trader):
+    flag = trader.requestSamplePrices(COMPANIES) # Input needs to be a list
+    while not flag:
+        flag = trader.requestSamplePrices(COMPANIES)
+
 def main(argv):
     '''
     STEP 0
@@ -172,27 +177,24 @@ def main(argv):
     '''
     #EXECUTE METHODS
     stock_data = []
-    # for company in COMPANIES:
+    #for company in COMPANIES:
     #     stock_data.append(Stock(company))
     stock_data.append(Stock(COMPANIES[1]))
 
+    requestPrices(trader) # Make the connection to get sample prices (requestSamplePrices) for all companies
+
     while time.time() - start < 22500: # 22500 corresponds to 3:45
         #Execute trades and stuff
-        flag = trader.requestSamplePrices([COMPANIES[1]]) # Input needs to be a list
-        s = time.time()
-        while not flag:
-            flag=trader.requestSamplePrices([COMPANIES[1]])
-        print("True connection"+str(time.time()-s))
         s = time.time()
         for stk in stock_data:
 
             sample = trader.getSamplePrices(stk.name, midPrices=True)
 
-            s = time.time()
+            #s = time.time()
             while(len(sample)<31): # Collect 30 data points per company
-            
                 sample = trader.getSamplePrices(stk.name, midPrices=True)
-            print("got sample at "+str(time.time()-s))
+
+            #print("Received Sample: "+str(time.time()-s))
             s = time.time()
             stk.add_data(sample)
             print(sample)
@@ -200,8 +202,9 @@ def main(argv):
             # frame = pd.DataFrame(stk.price)
             model = ARIMA(stk.price, order = (0,1,0)) # Make ARIMA model
             model_fit = model.fit(disp=0)
-            print("got arima at "+str(time.time()-s))
+            print("Computed ARIMA: "+str(time.time()-s))
             print(model_fit.summary())
+            time.sleep(10)
 
         #
 
