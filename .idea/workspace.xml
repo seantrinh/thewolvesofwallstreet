@@ -2,9 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c18ad2da-980c-4b5c-9033-7b80e8457a3f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/algotrading.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/algotrading.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/code/run.py" beforeDir="false" afterPath="$PROJECT_DIR$/code/run.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -42,8 +39,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/code/run.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="318">
-              <caret line="202" column="31" selection-start-line="202" selection-start-column="31" selection-end-line="202" selection-end-column="31" />
+            <state relative-caret-position="582">
+              <caret line="205" column="26" selection-start-line="205" selection-start-column="26" selection-end-line="205" selection-end-column="26" />
             </state>
           </provider>
         </entry>
@@ -259,12 +256,12 @@
       <workItem from="1550262802330" duration="8376000" />
       <workItem from="1550611642389" duration="7558000" />
       <workItem from="1550868338915" duration="4965000" />
-      <workItem from="1551199178359" duration="1527000" />
+      <workItem from="1551199178359" duration="2748000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="20484000" />
+    <option name="totallyTimeSpent" value="21705000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="130" y="25" width="1170" height="791" extended-state="0" />
@@ -359,8 +356,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/code/run.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="318">
-          <caret line="202" column="31" selection-start-line="202" selection-start-column="31" selection-end-line="202" selection-end-column="31" />
+        <state relative-caret-position="582">
+          <caret line="205" column="26" selection-start-line="205" selection-start-column="26" selection-end-line="205" selection-end-column="26" />
         </state>
       </provider>
     </entry>

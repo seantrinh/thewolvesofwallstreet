@@ -198,17 +198,12 @@ def main(argv):
             s = time.time()
             stk.add_data(sample)
             print(sample)
-            print(len(sample))
             # frame = pd.DataFrame(stk.price)
             model = ARIMA(stk.price, order = (0,1,0)) # Make ARIMA model
             model_fit = model.fit(disp=0)
             print("Computed ARIMA: "+str(time.time()-s))
             print(model_fit.summary())
             time.sleep(10)
-
-        #
-
-        print(0)
 
     '''
     STEP 3
