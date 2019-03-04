@@ -52,12 +52,83 @@ MIN_TRANSACTIONS = 10 #Minimum number of transactions that need to be included t
 
 account_balance = 1000000.00 #Beginning account balance, adjust as necessary
 BUFFER_SIZE = 50
+#state 0: initial state, gather data, get prediction
+#state 1: buy order is put in if the stock price increases by a certain percent
+threshold = 0.015
 class Stock:
     def __init__(self,comp_name):
         self.name = comp_name
-
+        self.state = 0
+        self.current_price = 0
+        self.predicted_price = 0
+        self.BO = False
+        self.SO = False
+        self.H = False
     def add_data(self,price):
         self.price = price
+def zero(stk):
+    prediction = getPrediction()#implement
+    stk.current_price = current_price()#implement
+    pressure = get_pressure(stk.name)
+    if(pressure<1.0/3.0 and pressure>-1.0/3.0):
+        return
+
+    if((stk.current_price-prediction)/stk.current_price>=threshold and pressure<0.0):
+        putBuyorder()#implement
+        stk.BO = True
+        stk.predicted_price = prediction
+        stk.state = 1
+
+def one(stk):
+    if(BuyOrderExecuted()): #implement
+        stk.current_price = stk.predicted_price
+        stk.BO = False
+        stk.H = True
+        stk.state = 2
+        return
+    pressure = get_pressure(stk.name)
+    if(pressure<1.0/3.0 and pressure>-1.0/3.0):
+        return
+    prediction = getPrediction()
+    stk.current_price = current_price()
+    if(prediction<stk.predicted_price and prediction < stk.current_price and pressure < 0.0):
+        updateBuyOrder()#implement
+        stk.predicted_price = prediction
+        return
+def two(stk):
+    pressure = get_pressure(stk.name)
+    if(pressure<1.0/3.0 and pressure>-1.0/3.0):
+        return
+    prediction = getPrediction()
+    if((prediction-stk.current_price)/stk.current_price>=threshold and pressure>0.0):
+        putSellOrder()#implement
+        stk.SO = True
+        stk.state = 3
+def three(stk):
+    if(SellOrderExecuted()):#implement
+        stk.SO = False
+        stk.H = False
+        stk.state = 0
+    pressure = get_pressure(stk.name)
+    if(pressure<1.0/3.0 and pressure>-1.0/3.0):
+        return
+    prediction = getPrediction()
+    if(prediction>stk.predicted_price and prediction >stk.current_price and pressure>0.0):
+        updateSellOrder()#implement
+        stk.predicted_price = prediction
+        return
+
+states_transition = {0:zero  ,1: one,2:two,3: three}
+def get_pressure(stk_name):
+    bid_book = trader.getOrderBook(stk_name, shift.OrderBookType.GLOBAL_BID, 1)
+    ask_book = trader.getOrderBook(stk_name, shift.OrderBookType.GLOBAL_ASK, 1)
+    pressure = 0
+    if len(bid_book) == 1 and len(ask_book) == 1:
+        bid_size = bid_book[0].size
+        ask_size = ask_book[0].size
+        pressure = float(bid_size - ask_size) / float(bid_size + ask_size)
+    return pressure
+
 
 
 def demo01(trader):
@@ -189,7 +260,7 @@ def main(argv):
         #Execute trades and stuff
         s = time.time()
         for stk in stock_data:
-
+            states_transition[stk.state](stk)
             # sample = trader.getSamplePrices(stk.name, midPrices=True)
             #
             # #s = time.time()
@@ -208,26 +279,8 @@ def main(argv):
             # time.sleep(10)
 
             # (B-A)/(B+A); Close to 1 -> going up; Close to -1 -> going down
-            bid_book = trader.getOrderBook(stk.name, shift.OrderBookType.GLOBAL_BID, 1)
-            ask_book = trader.getOrderBook(stk.name, shift.OrderBookType.GLOBAL_ASK, 1)
-            pressure = 2
-            if len(bid_book) == 1 and len(ask_book) == 1:
-                bid_size = bid_book[0].size
-                ask_size = ask_book[0].size
-                pressure = float(bid_size - ask_size) / float(bid_size + ask_size)
 
-            if pressure == 2:
-                print("Pressure for " + stk.name + ": NOT AVAILABLE")
-            elif pressure > 0:
-                print("Pressure for " + stk.name + ": " + str(pressure) + ". Strong buying pressure")
-                #sell?
-            elif pressure < 0:
-                print("Pressure for " + stk.name + ": " + str(pressure) + ". Strong selling pressure")
-                #buy?
-            else:
-                print("Pressure for " + stk.name + ": " + str(pressure) + ". Do nothing.")
-        print("-----")
-        time.sleep(10)
+
     '''
     STEP 3
     '''
