@@ -36,6 +36,7 @@ import time
 import random
 import pandas as pd
 from statsmodels.tsa.arima_model import ARIMA
+import keras
 
 
 
@@ -154,6 +155,7 @@ def main(argv):
     '''
     # create trader object
     trader = shift.Trader("test001") #Change this?
+    #trader = shift.Trader("wolves_of_wall_street")
 
     # connect and subscribe to all available order books
     try:
@@ -177,9 +179,9 @@ def main(argv):
     '''
     #EXECUTE METHODS
     stock_data = []
-    #for company in COMPANIES:
-    #     stock_data.append(Stock(company))
-    stock_data.append(Stock(COMPANIES[1]))
+    for company in COMPANIES:
+         stock_data.append(Stock(company))
+    #stock_data.append(Stock(COMPANIES[1]))
 
     requestPrices(trader) # Make the connection to get sample prices (requestSamplePrices) for all companies
 
@@ -188,23 +190,44 @@ def main(argv):
         s = time.time()
         for stk in stock_data:
 
-            sample = trader.getSamplePrices(stk.name, midPrices=True)
+            # sample = trader.getSamplePrices(stk.name, midPrices=True)
+            #
+            # #s = time.time()
+            # while(len(sample)<31): # Collect 30 data points per company
+            #     sample = trader.getSamplePrices(stk.name, midPrices=True)
+            #
+            # #print("Received Sample: "+str(time.time()-s))
+            # s = time.time()
+            # stk.add_data(sample)
+            # print(sample)
+            # # frame = pd.DataFrame(stk.price)
+            # model = ARIMA(stk.price, order = (0,1,0)) # Make ARIMA model
+            # model_fit = model.fit(disp=0)
+            # print("Computed ARIMA: "+str(time.time()-s))
+            # print(model_fit.summary())
+            # time.sleep(10)
 
-            #s = time.time()
-            while(len(sample)<31): # Collect 30 data points per company
-                sample = trader.getSamplePrices(stk.name, midPrices=True)
+            # (B-A)/(B+A); Close to 1 -> going up; Close to -1 -> going down
+            bid_book = trader.getOrderBook(stk.name, shift.OrderBookType.GLOBAL_BID, 1)
+            ask_book = trader.getOrderBook(stk.name, shift.OrderBookType.GLOBAL_ASK, 1)
+            pressure = 2
+            if len(bid_book) == 1 and len(ask_book) == 1:
+                bid_size = bid_book[0].size
+                ask_size = ask_book[0].size
+                pressure = float(bid_size - ask_size) / float(bid_size + ask_size)
 
-            #print("Received Sample: "+str(time.time()-s))
-            s = time.time()
-            stk.add_data(sample)
-            print(sample)
-            # frame = pd.DataFrame(stk.price)
-            model = ARIMA(stk.price, order = (0,1,0)) # Make ARIMA model
-            model_fit = model.fit(disp=0)
-            print("Computed ARIMA: "+str(time.time()-s))
-            print(model_fit.summary())
-            time.sleep(10)
-
+            if pressure == 2:
+                print("Pressure for " + stk.name + ": NOT AVAILABLE")
+            elif pressure > 0:
+                print("Pressure for " + stk.name + ": " + str(pressure) + ". Strong buying pressure")
+                #sell?
+            elif pressure < 0:
+                print("Pressure for " + stk.name + ": " + str(pressure) + ". Strong selling pressure")
+                #buy?
+            else:
+                print("Pressure for " + stk.name + ": " + str(pressure) + ". Do nothing.")
+        print("-----")
+        time.sleep(10)
     '''
     STEP 3
     '''
