@@ -56,7 +56,7 @@ account_balance = 1000000.00 #Beginning account balance, adjust as necessary
 BUFFER_SIZE = 50
 #state 0: initial state, gather data, get prediction
 #state 1: buy order is put in if the stock price increases by a certain percent
-THRESHOLD = 0.015
+THRESHOLD = 0.00000005
 
 class Stock:
     def __init__(self,comp_name):
@@ -69,22 +69,26 @@ class Stock:
         self.H = False
         self.price = []
 
-    def add_data(self,price):
-        self.price = price
+    def add_data(self,prices):
+        for price in prices:
+            self.price.append(price)
 
 def zero(stk, trader):
-    pressure = get_pressure(stk.name, trader)
+    #pressure = get_pressure(stk.name, trader)
+    pressure = -1.0
     if (-1.0/3.0) <= pressure <= (1.0/3.0):
         return
 
     prediction = get_prediction(stk, trader)
     stk.current_price = get_current_price(stk.name, trader)
+    print(str(stk.current_price)+" "+str(prediction))
     if (stk.current_price - prediction) / stk.current_price >= THRESHOLD and pressure < 0.0:
         limit_buy = shift.Order(shift.Order.LIMIT_BUY, stk.name, 1, prediction)
         trader.submitOrder(limit_buy)
         stk.BO = True
         stk.predicted_price = prediction
         stk.state = 1
+        print("Changed State from 0 to 1")
 
 def one(stk, trader):
     if buy_order_executed(stk.name, trader):
@@ -92,9 +96,11 @@ def one(stk, trader):
         stk.BO = False
         stk.H = True
         stk.state = 2
+        print("Changed State from 1 to 2")
         return
 
-    pressure = get_pressure(stk.name, trader)
+    # pressure = get_pressure(stk.name, trader)
+    pressure = -1.0
     if (-1.0 / 3.0) <= pressure <= (1.0 / 3.0):
         return
 
@@ -106,8 +112,10 @@ def one(stk, trader):
         return
 
 def two(stk, trader):
-    pressure = get_pressure(stk.name, trader)
+    # pressure = get_pressure(stk.name, trader)
+    pressure = 1.0
     if (-1.0 / 3.0) <= pressure <= (1.0 / 3.0):
+
         return
 
     prediction = get_prediction(stk, trader)
@@ -116,15 +124,18 @@ def two(stk, trader):
         trader.submitOrder(limit_sell)
         stk.SO = True
         stk.state = 3
+        print("Changed state from 2 to 3")
 
 def three(stk, trader):
     if sell_order_executed(stk.name, trader):
         stk.SO = False
         stk.H = False
         stk.state = 0
+        print("Changed state from 3 to 0")
         return
 
-    pressure = get_pressure(stk.name, trader)
+    # pressure = get_pressure(stk.name, trader)
+    pressure = 1.0
     if (-1.0 / 3.0) <= pressure <= (1.0 / 3.0):
         return
 
@@ -156,7 +167,6 @@ def get_prediction(stk, trader, p=3,d=1,q=0):
         prediction = model_fit.forecast(5)[0][4]
     except (ValueError, LinAlgError):
         prediction = stk.price[-1]
-        prediction = float(prediction)
     return prediction
 
 
@@ -360,9 +370,9 @@ def main(argv):
     '''
     #EXECUTE METHODS
     stock_data = []
-    for company in COMPANIES:
-         stock_data.append(Stock(company))
-    #stock_data.append(Stock(COMPANIES[1]))
+    #for company in COMPANIES:
+    #    stock_data.append(Stock(company))
+    stock_data.append(Stock(COMPANIES[2]))
 
     request_prices(trader) # Make the connection to get sample prices (requestSamplePrices) for all companies
 
@@ -371,6 +381,7 @@ def main(argv):
         s = time.time()
         for stk in stock_data:
             STATES_TRANSITION[stk.state](stk, trader)
+            print(stk.state)
             # sample = trader.getSamplePrices(stk.name, midPrices=True)
             #
             # #s = time.time()
