@@ -302,6 +302,14 @@ def requestPrices(trader):
     while not flag:
         flag = trader.requestSamplePrices(COMPANIES)
 
+def getPrediction(Actual, P=1,D=1,Q=1):
+    model = ARIMA(Actual, order=(P,D,Q))
+    model_fit = model.fit(disp = 0)
+    prediction = model_fit.forecast(5)[0][4]
+    return prediction
+
+
+
 def main(argv):
     '''
     STEP 0
