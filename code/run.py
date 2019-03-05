@@ -36,7 +36,9 @@ import time
 import random
 import pandas as pd
 from statsmodels.tsa.arima_model import ARIMA
-import keras
+#import keras
+from numpy.linalg import LinAlgError
+import statsmodels.api as sm
 
 
 
@@ -134,7 +136,7 @@ def three(stk, trader):
 
 STATES_TRANSITION = {0:zero, 1:one, 2:two, 3:three}
 
-def get_prediction(stk, trader, p=1,d=1,q=1):
+def get_prediction(stk, trader, p=3,d=1,q=0):
     '''
     :param stk: The stock object
     :param trader: The trader object
@@ -145,13 +147,18 @@ def get_prediction(stk, trader, p=1,d=1,q=1):
     '''
 
     actual = trader.getSamplePrices(stk.name, midPrices=True)
-    while len(actual) < 31: # Collect 30 data points
+    while len(actual) < 30: # Collect 30 data points
         actual = trader.getSamplePrices(stk.name, midPrices=True)
     stk.add_data(actual)
-    model = ARIMA(actual, order=(p,d,q))
-    model_fit = model.fit(disp = 0)
-    prediction = model_fit.forecast(5)[0][4]
-    return prediction
+    try:
+        model = ARIMA(stk.price, order=(p,d,q))
+        model_fit = model.fit(disp = 0)
+        prediction = model_fit.forecast(5)[0][4]
+    except (ValueError, LinAlgError):
+        prediction = stk.price[-1]
+        return prediction
+
+
 
 def update_buy_order(stk, trader, price):
     '''
@@ -326,7 +333,7 @@ def main(argv):
     STEP 0
     '''
     # create trader object
-    trader = shift.Trader("test001") #Change this?
+    trader = shift.Trader("test002") #Change this?
     #trader = shift.Trader("wolves_of_wall_street")
 
     # connect and subscribe to all available order books
