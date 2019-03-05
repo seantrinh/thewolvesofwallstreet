@@ -57,7 +57,7 @@ BUFFER_SIZE = 50
 #state 0: initial state, gather data, get prediction
 #state 1: buy order is put in if the stock price increases by a certain percent
 THRESHOLD = 0.00000005
-
+PURCHASE_SIZE = 2
 class Stock:
     def __init__(self,comp_name):
         self.name = comp_name
@@ -74,8 +74,8 @@ class Stock:
             self.price.append(price)
 
 def zero(stk, trader):
-    #pressure = get_pressure(stk.name, trader)
-    pressure = -1.0
+    pressure = get_pressure(stk.name, trader)
+    # pressure = -1.0
     if (-1.0/3.0) <= pressure <= (1.0/3.0):
         return
 
@@ -83,7 +83,7 @@ def zero(stk, trader):
     stk.current_price = get_current_price(stk.name, trader)
     print(str(stk.current_price)+" "+str(prediction))
     if (stk.current_price - prediction) / stk.current_price >= THRESHOLD and pressure < 0.0:
-        limit_buy = shift.Order(shift.Order.LIMIT_BUY, stk.name, 1, prediction)
+        limit_buy = shift.Order(shift.Order.LIMIT_BUY, stk.name, PURCHASE_SIZE, prediction)
         trader.submitOrder(limit_buy)
         stk.BO = True
         stk.predicted_price = prediction
@@ -99,8 +99,8 @@ def one(stk, trader):
         print("Changed State from 1 to 2")
         return
 
-    # pressure = get_pressure(stk.name, trader)
-    pressure = -1.0
+    pressure = get_pressure(stk.name, trader)
+    # pressure = -1.0
     if (-1.0 / 3.0) <= pressure <= (1.0 / 3.0):
         return
 
@@ -112,15 +112,15 @@ def one(stk, trader):
         return
 
 def two(stk, trader):
-    # pressure = get_pressure(stk.name, trader)
-    pressure = 1.0
+    pressure = get_pressure(stk.name, trader)
+    # pressure = 1.0
     if (-1.0 / 3.0) <= pressure <= (1.0 / 3.0):
 
         return
 
     prediction = get_prediction(stk, trader)
     if (prediction - stk.current_price) / stk.current_price >= THRESHOLD and pressure > 0.0:
-        limit_sell = shift.Order(shift.Order.LIMIT_SELL, stk.name, 1, prediction)
+        limit_sell = shift.Order(shift.Order.LIMIT_SELL, stk.name, PURCHASE_SIZE, prediction)
         trader.submitOrder(limit_sell)
         stk.SO = True
         stk.state = 3
@@ -134,8 +134,8 @@ def three(stk, trader):
         print("Changed state from 3 to 0")
         return
 
-    # pressure = get_pressure(stk.name, trader)
-    pressure = 1.0
+    pressure = get_pressure(stk.name, trader)
+    # pressure = 1.0
     if (-1.0 / 3.0) <= pressure <= (1.0 / 3.0):
         return
 
@@ -180,8 +180,9 @@ def update_buy_order(stk, trader, price):
     '''
     for order in trader.getWaitingList():
         if order.symbol == stk.name and order.type == shift.Order.LIMIT_BUY:
-            trader.submitCancellation(order)
-            limit_buy = shift.Order(shift.Order.LIMIT_BUY, stk.name, 1, price)
+            order.type = shift.Order.CANCEL_BID
+            trader.submitOrder(order)
+            limit_buy = shift.Order(shift.Order.LIMIT_BUY, stk.name, PURCHASE_SIZE, price)
             trader.submitOrder(limit_buy)
             return
     stk.current_price = stk.predicted_price
@@ -198,8 +199,9 @@ def update_sell_order(stk, trader, price):
     '''
     for order in trader.getWaitingList():
         if order.symbol == stk.name and order.type == shift.Order.LIMIT_SELL:
-            trader.submitCancellation(order)
-            limit_sell = shift.Order(shift.Order.LIMIT_SELL, stk.name, 1, price)
+            order.type = shift.Order.CANCEL_ASK
+            trader.submitOrder(order)
+            limit_sell = shift.Order(shift.Order.LIMIT_SELL, stk.name, PURCHASE_SIZE, price)
             trader.submitOrder(limit_sell)
             return
     stk.SO = False
@@ -344,13 +346,13 @@ def main(argv):
     STEP 0
     '''
     # create trader object
-    trader = shift.Trader("test001") #Change this?
-    #trader = shift.Trader("wolves_of_wall_street")
+    #trader = shift.Trader("test001") #Change this?
+    trader = shift.Trader("wolves_of_wall_street")
 
     # connect and subscribe to all available order books
     try:
-        trader.connect("initiator.cfg", "password")
-        #trader.connect("initiator.cfg", "ubd7w26JahGS9p4A")
+        #trader.connect("initiator.cfg", "password")
+        trader.connect("initiator.cfg", "ubd7w26JahGS9p4A")
         trader.subAllOrderBook()
     except shift.IncorrectPassword as e:
         print(e)
@@ -370,9 +372,9 @@ def main(argv):
     '''
     #EXECUTE METHODS
     stock_data = []
-    #for company in COMPANIES:
-    #    stock_data.append(Stock(company))
-    stock_data.append(Stock(COMPANIES[2]))
+    for company in COMPANIES:
+       stock_data.append(Stock(company))
+    # stock_data.append(Stock(COMPANIES[2]))
 
     request_prices(trader) # Make the connection to get sample prices (requestSamplePrices) for all companies
 
@@ -381,7 +383,7 @@ def main(argv):
         s = time.time()
         for stk in stock_data:
             STATES_TRANSITION[stk.state](stk, trader)
-            print(stk.state)
+            # print(stk.state)
             # sample = trader.getSamplePrices(stk.name, midPrices=True)
             #
             # #s = time.time()
@@ -399,14 +401,14 @@ def main(argv):
             # print(model_fit.summary())
             # time.sleep(10)
             # (B-A)/(B+A); Close to 1 -> going up; Close to -1 -> going down
-        time.sleep(10)
+        # time.sleep(10)
         printSummary(trader)
 
     '''
     STEP 3
     '''
     #Time is now past 3:45
-    num_executed_transactions = trader.getSubmittedOrdersSize - trader.getWaitingListSize
+    num_executed_transactions = trader.getSubmittedOrdersSize() - trader.getWaitingListSize()
     if num_executed_transactions < MIN_TRANSACTIONS:
         # getSubmittedOrdersSize returns # transactions both executed & not executed, excluding cancellation requests
         # getWaitingListSize returns # transactions not executed
@@ -433,8 +435,22 @@ def main(argv):
         trader.submitOrder(shift.Order(shift.Order.MARKET_SELL,company,size=num_shares)) #Sell at market price
         #Update log with transaction
 
+
+
     #Do this at 3:59?
-    cancelAllPendingOrders(trader)
+    for order in trader.getWaitingList():
+        if order.type == shift.Order.LIMIT_BUY:
+            order.type = shift.Order.CANCEL_BID
+            trader.submitOrder(order)
+        elif order.type == shift.Order.LIMIT_SELL:
+            order.type = shift.Order.CANCEL_ASK
+            trader.submitOrder(order)
+            trader.submitOrder(shift.Order(shift.Order.MARKET_SELL,company,size=PURCHASE_SIZE))
+
+    #cancelAllPendingOrders(trader)
+    while trader.getWaitingListSize() != 0:
+        print("Waiting")
+        time.sleep(3)
 
     #Update log
 
