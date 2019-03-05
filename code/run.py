@@ -303,6 +303,12 @@ def requestPrices(trader):
         flag = trader.requestSamplePrices(COMPANIES)
 
 def getPrediction(Actual, P=1,D=1,Q=1):
+    '''
+    :param Actual: Stock Data
+    Assigned Values already for P, D, Q.   
+    :return: 5th Step forecasted Value
+    '''
+
     model = ARIMA(Actual, order=(P,D,Q))
     model_fit = model.fit(disp = 0)
     prediction = model_fit.forecast(5)[0][4]
