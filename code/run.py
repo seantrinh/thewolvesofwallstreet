@@ -75,7 +75,7 @@ def zero(stk, trader):
     if (-1.0/3.0) <= pressure <= (1.0/3.0):
         return
 
-    prediction = getPrediction(stk.price)  # implement
+    prediction = get_prediction(stk, trader)
     stk.current_price = get_current_price(stk.name, trader)
     if (stk.current_price - prediction) / stk.current_price >= THRESHOLD and pressure < 0.0:
         limit_buy = shift.Order(shift.Order.LIMIT_BUY, stk.name, 1, prediction)
@@ -96,7 +96,7 @@ def one(stk, trader):
     if (-1.0 / 3.0) <= pressure <= (1.0 / 3.0):
         return
 
-    prediction = getPrediction(stk.price)#implement
+    prediction = get_prediction(stk, trader)
     stk.current_price = get_current_price(stk.name, trader)
     if prediction < stk.predicted_price and prediction < stk.current_price and pressure < 0.0:
         update_buy_order(stk, trader, prediction)
@@ -108,7 +108,7 @@ def two(stk, trader):
     if (-1.0 / 3.0) <= pressure <= (1.0 / 3.0):
         return
 
-    prediction = getPrediction(stk.price)#implement
+    prediction = get_prediction(stk, trader)
     if (prediction - stk.current_price) / stk.current_price >= THRESHOLD and pressure > 0.0:
         limit_sell = shift.Order(shift.Order.LIMIT_SELL, stk.name, 1, prediction)
         trader.submitOrder(limit_sell)
@@ -126,7 +126,7 @@ def three(stk, trader):
     if (-1.0 / 3.0) <= pressure <= (1.0 / 3.0):
         return
 
-    prediction = getPrediction(stk.price)#implement
+    prediction = get_prediction(stk, trader)
     if prediction > stk.predicted_price and prediction > stk.current_price and pressure > 0.0:
         update_sell_order(stk, trader, prediction)
         stk.predicted_price = prediction
@@ -134,9 +134,28 @@ def three(stk, trader):
 
 STATES_TRANSITION = {0:zero, 1:one, 2:two, 3:three}
 
+def get_prediction(stk, trader, p=1,d=1,q=1):
+    '''
+    :param stk: The stock object
+    :param trader: The trader object
+    :param p: Default value 1
+    :param d: Default value 1
+    :param q: Default value 1
+    :return: A prediction as a float
+    '''
+
+    actual = trader.getSamplePrices(stk.name, midPrices=True)
+    while len(actual) < 31: # Collect 30 data points
+        actual = trader.getSamplePrices(stk.name, midPrices=True)
+    stk.add_data(actual)
+    model = ARIMA(actual, order=(p,d,q))
+    model_fit = model.fit(disp = 0)
+    prediction = model_fit.forecast(5)[0][4]
+    return prediction
+
 def update_buy_order(stk, trader, price):
     '''
-    :param stock: The stock object
+    :param stk: The stock object
     :param trader: The trader object
     :param price: The price for the new buy order
     :return: N/A
@@ -154,7 +173,7 @@ def update_buy_order(stk, trader, price):
 
 def update_sell_order(stk, trader, price):
     '''
-    :param stock: The stock object
+    :param stk: The stock object
     :param trader: The trader object
     :param price: The price for the new sell order
     :return: N/A
@@ -297,24 +316,10 @@ def printSummary(trader):
 
     return
 
-def requestPrices(trader):
+def request_prices(trader):
     flag = trader.requestSamplePrices(COMPANIES) # Input needs to be a list
     while not flag:
         flag = trader.requestSamplePrices(COMPANIES)
-
-def getPrediction(Actual, P=1,D=1,Q=1):
-    '''
-    :param Actual: Stock Data
-    Assigned Values already for P, D, Q.
-    :return: 5th Step forecasted Value
-    '''
-
-    model = ARIMA(Actual, order=(P,D,Q))
-    model_fit = model.fit(disp = 0)
-    prediction = model_fit.forecast(5)[0][4]
-    return prediction
-
-
 
 def main(argv):
     '''
@@ -350,7 +355,7 @@ def main(argv):
          stock_data.append(Stock(company))
     #stock_data.append(Stock(COMPANIES[1]))
 
-    requestPrices(trader) # Make the connection to get sample prices (requestSamplePrices) for all companies
+    request_prices(trader) # Make the connection to get sample prices (requestSamplePrices) for all companies
 
     while time.time() - start < 22500: # 22500 corresponds to 3:45
         #Execute trades and stuff
@@ -390,7 +395,7 @@ def main(argv):
             comp = random.randint(0, NUM_COMPANIES - 1)
             company = COMPANIES[comp]
 
-            while get_pressure(company, trader) >= (-1.0/3.0) and time.time() - start < 22900:
+            while get_pressure(company, trader) <= (1.0/3.0) and time.time() - start < 22900:
                 company = COMPANIES[random.randint(0, NUM_COMPANIES - 1)]
 
             trader.submitOrder(shift.Order(shift.Order.MARKET_BUY, company, size=1))
