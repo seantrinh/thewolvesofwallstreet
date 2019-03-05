@@ -375,12 +375,16 @@ def main(argv):
             #buy and then sell, both at market price
             comp = random.randint(0, NUM_COMPANIES - 1)
             company = COMPANIES[comp]
+
+            while get_pressure(company, trader) >= (-1.0/3.0) and time.time() - start < 22900:
+                company = COMPANIES[random.randint(0, NUM_COMPANIES - 1)]
+
             trader.submitOrder(shift.Order(shift.Order.MARKET_BUY, company, size=1))
             time.sleep(10)
-            printSummary(trader)
+            # printSummary(trader)
             trader.submitOrder(shift.Order(shift.Order.MARKET_SELL, company, size=1))
             time.sleep(10)
-            printSummary(trader)
+            # printSummary(trader)
 
     for company in COMPANIES:
         # Price? Long and short?
