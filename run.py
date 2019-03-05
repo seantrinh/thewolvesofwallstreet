@@ -334,12 +334,13 @@ def main(argv):
     STEP 0
     '''
     # create trader object
-    trader = shift.Trader("test002") #Change this?
+    trader = shift.Trader("test001") #Change this?
     #trader = shift.Trader("wolves_of_wall_street")
 
     # connect and subscribe to all available order books
     try:
         trader.connect("initiator.cfg", "password")
+        #trader.connect("initiator.cfg", "ubd7w26JahGS9p4A")
         trader.subAllOrderBook()
     except shift.IncorrectPassword as e:
         print(e)

@@ -72,7 +72,6 @@ def printSummary(trader):
      2. Total Shares (totalShares)
      3. Total Realized Profit/Loss (totalRealizedPL)
      4. Timestamp of Last Update (timestamp)
-
      getPortfolioItems() returns a dictionary with "symbol" as keys and PortfolioItem as values, with each providing the following information:
      1. Symbol (getSymbol())
      2. Shares (getShares())
