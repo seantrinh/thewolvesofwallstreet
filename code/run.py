@@ -75,7 +75,7 @@ def zero(stk, trader):
     if (-1.0/3.0) <= pressure <= (1.0/3.0):
         return
 
-    prediction = getPrediction()  # implement
+    prediction = getPrediction(stk.price)  # implement
     stk.current_price = get_current_price(stk.name, trader)
     if (stk.current_price - prediction) / stk.current_price >= THRESHOLD and pressure < 0.0:
         limit_buy = shift.Order(shift.Order.LIMIT_BUY, stk.name, 1, prediction)
@@ -96,7 +96,7 @@ def one(stk, trader):
     if (-1.0 / 3.0) <= pressure <= (1.0 / 3.0):
         return
 
-    prediction = getPrediction()#implement
+    prediction = getPrediction(stk.price)#implement
     stk.current_price = get_current_price(stk.name, trader)
     if prediction < stk.predicted_price and prediction < stk.current_price and pressure < 0.0:
         update_buy_order(stk, trader, prediction)
@@ -108,7 +108,7 @@ def two(stk, trader):
     if (-1.0 / 3.0) <= pressure <= (1.0 / 3.0):
         return
 
-    prediction = getPrediction()#implement
+    prediction = getPrediction(stk.price)#implement
     if (prediction - stk.current_price) / stk.current_price >= THRESHOLD and pressure > 0.0:
         limit_sell = shift.Order(shift.Order.LIMIT_SELL, stk.name, 1, prediction)
         trader.submitOrder(limit_sell)
@@ -126,7 +126,7 @@ def three(stk, trader):
     if (-1.0 / 3.0) <= pressure <= (1.0 / 3.0):
         return
 
-    prediction = getPrediction()#implement
+    prediction = getPrediction(stk.price)#implement
     if prediction > stk.predicted_price and prediction > stk.current_price and pressure > 0.0:
         update_sell_order(stk, trader, prediction)
         stk.predicted_price = prediction
@@ -305,7 +305,7 @@ def requestPrices(trader):
 def getPrediction(Actual, P=1,D=1,Q=1):
     '''
     :param Actual: Stock Data
-    Assigned Values already for P, D, Q.   
+    Assigned Values already for P, D, Q.
     :return: 5th Step forecasted Value
     '''
 
