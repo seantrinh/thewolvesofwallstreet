@@ -62,8 +62,8 @@ class Stock:
     def __init__(self,comp_name):
         self.name = comp_name
         self.state = 0
-        self.current_price = 0
-        self.predicted_price = 0
+        self.current_price = 0.0
+        self.predicted_price = 0.0
         self.BO = False
         self.SO = False
         self.H = False
@@ -156,7 +156,8 @@ def get_prediction(stk, trader, p=3,d=1,q=0):
         prediction = model_fit.forecast(5)[0][4]
     except (ValueError, LinAlgError):
         prediction = stk.price[-1]
-        return prediction
+        prediction = float(prediction)
+    return prediction
 
 
 
@@ -387,6 +388,7 @@ def main(argv):
             # time.sleep(10)
             # (B-A)/(B+A); Close to 1 -> going up; Close to -1 -> going down
         time.sleep(10)
+        printSummary(trader)
 
     '''
     STEP 3
