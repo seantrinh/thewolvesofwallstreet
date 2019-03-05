@@ -54,7 +54,8 @@ account_balance = 1000000.00 #Beginning account balance, adjust as necessary
 BUFFER_SIZE = 50
 #state 0: initial state, gather data, get prediction
 #state 1: buy order is put in if the stock price increases by a certain percent
-threshold = 0.015
+THRESHOLD = 0.015
+
 class Stock:
     def __init__(self,comp_name):
         self.name = comp_name
@@ -64,62 +65,140 @@ class Stock:
         self.BO = False
         self.SO = False
         self.H = False
+        self.price = []
+
     def add_data(self,price):
         self.price = price
-def zero(stk):
-    prediction = getPrediction()#implement
-    stk.current_price = current_price()#implement
-    pressure = get_pressure(stk.name)
-    if(pressure<1.0/3.0 and pressure>-1.0/3.0):
+
+def zero(stk, trader):
+    pressure = get_pressure(stk.name, trader)
+    if (-1.0/3.0) <= pressure <= (1.0/3.0):
         return
 
-    if((stk.current_price-prediction)/stk.current_price>=threshold and pressure<0.0):
-        putBuyorder()#implement
+    prediction = getPrediction()  # implement
+    stk.current_price = get_current_price(stk.name, trader)
+    if (stk.current_price - prediction) / stk.current_price >= THRESHOLD and pressure < 0.0:
+        limit_buy = shift.Order(shift.Order.LIMIT_BUY, stk.name, 1, prediction)
+        trader.submitOrder(limit_buy)
         stk.BO = True
         stk.predicted_price = prediction
         stk.state = 1
 
-def one(stk):
-    if(BuyOrderExecuted()): #implement
+def one(stk, trader):
+    if buy_order_executed(stk.name, trader):
         stk.current_price = stk.predicted_price
         stk.BO = False
         stk.H = True
         stk.state = 2
         return
-    pressure = get_pressure(stk.name)
-    if(pressure<1.0/3.0 and pressure>-1.0/3.0):
+
+    pressure = get_pressure(stk.name, trader)
+    if (-1.0 / 3.0) <= pressure <= (1.0 / 3.0):
         return
-    prediction = getPrediction()
-    stk.current_price = current_price()
-    if(prediction<stk.predicted_price and prediction < stk.current_price and pressure < 0.0):
-        updateBuyOrder()#implement
-        stk.predicted_price = prediction
-        return
-def two(stk):
-    pressure = get_pressure(stk.name)
-    if(pressure<1.0/3.0 and pressure>-1.0/3.0):
-        return
-    prediction = getPrediction()
-    if((prediction-stk.current_price)/stk.current_price>=threshold and pressure>0.0):
-        putSellOrder()#implement
-        stk.SO = True
-        stk.state = 3
-def three(stk):
-    if(SellOrderExecuted()):#implement
-        stk.SO = False
-        stk.H = False
-        stk.state = 0
-    pressure = get_pressure(stk.name)
-    if(pressure<1.0/3.0 and pressure>-1.0/3.0):
-        return
-    prediction = getPrediction()
-    if(prediction>stk.predicted_price and prediction >stk.current_price and pressure>0.0):
-        updateSellOrder()#implement
+
+    prediction = getPrediction()#implement
+    stk.current_price = get_current_price(stk.name, trader)
+    if prediction < stk.predicted_price and prediction < stk.current_price and pressure < 0.0:
+        update_buy_order(stk, trader, prediction)
         stk.predicted_price = prediction
         return
 
-states_transition = {0:zero  ,1: one,2:two,3: three}
-def get_pressure(stk_name):
+def two(stk, trader):
+    pressure = get_pressure(stk.name, trader)
+    if (-1.0 / 3.0) <= pressure <= (1.0 / 3.0):
+        return
+
+    prediction = getPrediction()#implement
+    if (prediction - stk.current_price) / stk.current_price >= THRESHOLD and pressure > 0.0:
+        limit_sell = shift.Order(shift.Order.LIMIT_SELL, stk.name, 1, prediction)
+        trader.submitOrder(limit_sell)
+        stk.SO = True
+        stk.state = 3
+
+def three(stk, trader):
+    if sell_order_executed(stk.name, trader):
+        stk.SO = False
+        stk.H = False
+        stk.state = 0
+        return
+
+    pressure = get_pressure(stk.name, trader)
+    if (-1.0 / 3.0) <= pressure <= (1.0 / 3.0):
+        return
+
+    prediction = getPrediction()#implement
+    if prediction > stk.predicted_price and prediction > stk.current_price and pressure > 0.0:
+        update_sell_order(stk, trader, prediction)
+        stk.predicted_price = prediction
+        return
+
+STATES_TRANSITION = {0:zero, 1:one, 2:two, 3:three}
+
+def update_buy_order(stk, trader, price):
+    '''
+    :param stock: The stock object
+    :param trader: The trader object
+    :param price: The price for the new buy order
+    :return: N/A
+    '''
+    for order in trader.getWaitingList():
+        if order.symbol == stk.name and order.type == shift.Order.LIMIT_BUY:
+            trader.submitCancellation(order)
+            limit_buy = shift.Order(shift.Order.LIMIT_BUY, stk.name, 1, price)
+            trader.submitOrder(limit_buy)
+            return
+    stk.current_price = stk.predicted_price
+    stk.BO = False
+    stk.H = True
+    stk.state = 2
+
+def update_sell_order(stk, trader, price):
+    '''
+    :param stock: The stock object
+    :param trader: The trader object
+    :param price: The price for the new sell order
+    :return: N/A
+    '''
+    for order in trader.getWaitingList():
+        if order.symbol == stk.name and order.type == shift.Order.LIMIT_SELL:
+            trader.submitCancellation(order)
+            limit_sell = shift.Order(shift.Order.LIMIT_SELL, stk.name, 1, price)
+            trader.submitOrder(limit_sell)
+            return
+    stk.SO = False
+    stk.H = False
+    stk.state = 0
+
+def buy_order_executed(stock, trader):
+    '''
+    :param stock: The stock symbol
+    :param trader: The trader object
+    :return: True if the buy order was executed; False if not
+    '''
+    for order in trader.getWaitingList():
+        if order.symbol == stock and order.type == shift.Order.LIMIT_BUY:
+            return False
+    return True
+
+def sell_order_executed(stock, trader):
+    '''
+    :param stock: The stock symbol
+    :param trader: The trader object
+    :return: True if the sell order was executed; False if not
+    '''
+    for order in trader.getWaitingList():
+        if order.symbol == stock and order.type == shift.Order.LIMIT_SELL:
+            return False
+    return True
+
+def get_pressure(stk_name, trader):
+    '''
+    :param stk_name: The stock symbol
+    :param trader: The trader object
+    :return: The buying/selling pressure as calculated by:
+                        (B - A) / (B + A)
+             where B = the highest bid size and A = the highest ask size
+    '''
     bid_book = trader.getOrderBook(stk_name, shift.OrderBookType.GLOBAL_BID, 1)
     ask_book = trader.getOrderBook(stk_name, shift.OrderBookType.GLOBAL_ASK, 1)
     pressure = 0
@@ -129,19 +208,22 @@ def get_pressure(stk_name):
         pressure = float(bid_size - ask_size) / float(bid_size + ask_size)
     return pressure
 
+def get_current_price(stock, trader):
+    '''
+    :param stock: Stock symbol
+    :param trader: the trader
+    :return: the current price of the given stock
 
-
-def demo01(trader):
-    """
-    This method submits a limit buy order by indicating symbol, limit price, limit size and order type.
-    :param trader:
-    :return:
-    """
-
-    limitBuy = shift.Order(shift.Order.LIMIT_BUY, "AAPL", 1, 10.00)
-    trader.submitOrder(limitBuy)
-
-    return
+    Calculated by getting the average of the highest bid price and highest ask price
+    '''
+    current_price = 0.00
+    bid_book = trader.getOrderBook(stock, shift.OrderBookType.GLOBAL_BID, 1)
+    ask_book = trader.getOrderBook(stock, shift.OrderBookType.GLOBAL_ASK, 1)
+    if len(bid_book) == 1 and len(ask_book) == 1:
+        bid_price = bid_book[0].price
+        ask_price = ask_book[0].price
+        current_price = (bid_price + ask_price) / 2.0
+    return current_price
 
 def cancelAllPendingOrders(trader):
     """
@@ -260,7 +342,7 @@ def main(argv):
         #Execute trades and stuff
         s = time.time()
         for stk in stock_data:
-            states_transition[stk.state](stk)
+            STATES_TRANSITION[stk.state](stk, trader)
             # sample = trader.getSamplePrices(stk.name, midPrices=True)
             #
             # #s = time.time()
@@ -277,9 +359,8 @@ def main(argv):
             # print("Computed ARIMA: "+str(time.time()-s))
             # print(model_fit.summary())
             # time.sleep(10)
-
             # (B-A)/(B+A); Close to 1 -> going up; Close to -1 -> going down
-
+        time.sleep(10)
 
     '''
     STEP 3
