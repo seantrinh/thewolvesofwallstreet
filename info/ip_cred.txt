@@ -1,10 +1,10 @@
-155.246.104.113
+155.246.104.97
 
 myteam
 
 1qaz2wsx
 
-NEW PASSWORD: j57TrBBx
+NEW PASSWORD: j57TrBBx [IGNORE]
 
 test001
 
@@ -12,7 +12,7 @@ test001
 
 test010 (password: password)
 
-ssh myteam@155.246.104.113
+ssh myteam@155.246.104.97
 
 cd SHIFT/
 ./startup.sh
