@@ -380,7 +380,7 @@ def update_sell_order(stk, trader, price):
         if order.symbol == stk.name and order.type == shift.Order.LIMIT_SELL:
             order.type = shift.Order.CANCEL_ASK
             trader.submitOrder(order)
-            PURCHASE_SIZE = purchasizing_size(stk, trader)
+            PURCHASE_SIZE = trader.getPorfolioItem(stk.name).getShares()
             limit_sell = shift.Order(shift.Order.LIMIT_SELL, stk.name, PURCHASE_SIZE, price)
             trader.submitOrder(limit_sell)
             return
