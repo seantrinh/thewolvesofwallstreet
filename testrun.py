@@ -161,7 +161,7 @@ def two(stk, trader):
     if time.time() - start > TIME_TO_STOP_BUY:
         THRESHOLD /= 1.5
 
-    PURCHASE_SIZE = purchasizing_size(stk, trader)
+    PURCHASE_SIZE = trader.getPortfolioItem(stk.name).getShares()
     if (prediction - stk.current_price) / stk.current_price >= THRESHOLD and pressure > 0.0:
         if expected_sell_return(stk,trader,prediction) > 2:
             limit_sell = shift.Order(shift.Order.LIMIT_SELL, stk.name, PURCHASE_SIZE, prediction)
@@ -171,12 +171,12 @@ def two(stk, trader):
 
     if (prediction - stk.current_price) / stk.current_price >= 2 * THRESHOLD and pressure > 0.0:
         # print("SHORTING "+stk.name)
-        trader.submitOrder(shift.Order(shift.Order.MARKET_SELL, stk.name, size=PURCHASE_SIZE))
+        trader.submitOrder(shift.Order(shift.Order.MARKET_SELL, stk.name, size=2))
         stk.S = True
         stk.H = True
         stk.state = 4
         stk.predicted_price = prediction
-        limit_buy = shift.Order(shift.Order.LIMIT_BUY, stk.name, PURCHASE_SIZE, stk.predicted_price)
+        limit_buy = shift.Order(shift.Order.LIMIT_BUY, stk.name, 2, stk.predicted_price)
         trader.submitOrder(limit_buy)
         stk.BO = True
         NUM_TRADES += 1
@@ -272,7 +272,7 @@ def expected_sell_return(stk, trader, predicted_price):
     :return: The expected return after selling
     '''
     size = trader.getPortfolioItem(stk.name).getShares()
-    purchase_price = trader.getPortfolioItem.getPrice()
+    purchase_price = trader.getPortfolioItem(stk.name).getPrice()
     expected = size * (purchase_price - predicted_price - .002)
     return expected
 
@@ -508,7 +508,6 @@ def cancelAllPendingOrders(trader):
     print("Waiting list size: " + str(trader.getWaitingListSize()))
     return
 
-def update_holdings(stk, trader):
 
 
 def printSummary(trader):
