@@ -52,7 +52,7 @@ THRESHOLD = 0.0000001
 PURCHASE_SIZE = 1
 NUM_TRADES = 0
 start = 0.0
-TIME_TO_CLOSE = 1500.0
+TIME_TO_CLOSE = 22500
 TIME_TO_STOP_BUY = TIME_TO_CLOSE*.98 #equates to TIME_TO_CLOSE-15-18min on a normal trading day, calculated for when
 
 class Stock:
