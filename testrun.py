@@ -92,7 +92,7 @@ def zero(stk, trader):
             stk.predicted_price = prediction
             stk.state = 1
             return
-        continue
+
         # print("Changed State from 0 to 1")
     if (prediction - stk.current_price) / stk.current_price >= 2*THRESHOLD and pressure > 0.0:
         # print("SHORTING "+stk.name)
@@ -247,7 +247,7 @@ def get_prediction(stk, trader, p=3,d=1,q=0):
         prediction = stk.price[-1]
     return prediction
 
-def get_extroploated_prediction(stk, trader, p=3, p=1,d = 1, q = 0):
+def get_extroploated_prediction(stk, trader, p=3,d = 1, q = 0):
     '''
     :param stk: The stock object
     :param trader: The trader object
@@ -277,22 +277,14 @@ def expected_return(stk,trader,predicted_price,tc):
     :return: Boolean True if (Expected Return > 2), else False
     '''
     size = trader.getPortfolioItem(stk.name).getShares()
-    purchase_price = trader.getProtfolioItem(stk.name).getPrice()
+    purchase_price = trader.getPortfolioItem(stk.name).getPrice()
     rtrn = size*(purchase_price-predicted_price-tc)
     if rtrn > 2:
         return True
     else:
         return False
 
-def update_holdings(stk, trader):
-    '''
 
-    :param stk: The stock object
-    :param trader: The trader object
-    :return: Updates the holding variable within the stock object
-    '''
-
-    for
 
 def update_buy_order(stk, trader, price):
     '''
