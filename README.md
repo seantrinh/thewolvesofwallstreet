@@ -3,9 +3,9 @@
 This repository contains code, information, and resources developed and used for the Stevens Algorithmic Trading Competition 
 Spring 2019. For questions about the competition itself, please contact algotrading@stevens.edu.
 
-## Note for Thiago
+## Note
 
-The main Python script to run is located in the 'code' folder, under 'run.py'.
+The main Python script to run is located in the root directory, under 'run.py'.
 
 ## Tech Used
 
