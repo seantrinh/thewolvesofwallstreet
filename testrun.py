@@ -48,7 +48,7 @@ account_balance = 1000000.00 #Beginning account balance, adjust as necessary
 BUFFER_SIZE = 50
 #state 0: initial state, gather data, get prediction
 #state 1: buy order is put in if the stock price increases by a certain percent
-THRESHOLD = 0.0001
+THRESHOLD = 0.000075
 # PURCHASE_SIZE = 1
 NUM_TRADES = 0
 start = 0.0
@@ -146,7 +146,7 @@ def two(stk, trader):
     global THRESHOLD
     global NUM_TRADES
     price_current = get_current_price(stk.name, trader)
-    if (stk.current_price - price_current) / stk.current_price >= 1000000.0 * THRESHOLD:
+    if (stk.current_price - price_current) / stk.current_price >= .075:
         stop_loss(stk.name,trader)
         stk.H = False
         stk.state = 0
@@ -158,8 +158,8 @@ def two(stk, trader):
         return
     prediction = get_prediction(stk, trader)
 
-    if time.time() - start > TIME_TO_STOP_BUY:
-        THRESHOLD /= 1.5
+    # if time.time() - start > TIME_TO_STOP_BUY:
+    #     THRESHOLD /= 1.5
 
     PURCHASE_SIZE = trader.getPortfolioItem(stk.name).getShares()
     if (prediction - stk.current_price) / stk.current_price >= THRESHOLD and pressure > 0.0:
@@ -207,8 +207,8 @@ def three(stk, trader):
 
     prediction = get_prediction(stk, trader)
 
-    if time.time() - start > TIME_TO_STOP_BUY:
-        THRESHOLD /= 2.0
+    # if time.time() - start > TIME_TO_STOP_BUY:
+    #     THRESHOLD /= 2.0
     if prediction > stk.predicted_price and prediction > stk.current_price and pressure > 0.0:
         update_sell_order(stk, trader, prediction)
         stk.predicted_price = prediction
@@ -225,8 +225,8 @@ def four(stk,trader):
         NUM_TRADES+=1
         # print("Changed State from 1 to 2")
         return
-    if time.time()-start>TIME_TO_STOP_BUY:
-        THRESHOLD/=2.0
+    # if time.time()-start>TIME_TO_STOP_BUY:
+    #     THRESHOLD/=2.0
     pressure = get_pressure(stk.name, trader)
     # pressure = -1.0
     if (-1.0 / 3.0) <= pressure <= (1.0 / 3.0):
@@ -329,21 +329,21 @@ def purchasizing_size (stk, trader):
         while True:
             if shares == 0:
                 return 1
-            if shares > 3:
-                shares = 3
+            if shares > 4:
+                shares = 4
             while shares > 1:
                 expected = expected_return(stk,current_price,future_price,shares)
                 res = 2/expected
                 if 0 < res < 0.7:
-                    return 3
+                    return 4
                 else:
-                    shares = 2
+                    shares = 3
                     expected = expected_return(stk, current_price, future_price, shares)
                     res = 2/expected
                     if 0 < res < 1.3:
-                        return 2
+                        return 3
                     else:
-                        return 1
+                        return 2
     else:
         return 1
 
