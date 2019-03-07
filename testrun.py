@@ -48,11 +48,11 @@ account_balance = 1000000.00 #Beginning account balance, adjust as necessary
 BUFFER_SIZE = 50
 #state 0: initial state, gather data, get prediction
 #state 1: buy order is put in if the stock price increases by a certain percent
-THRESHOLD = 0.0000001
+THRESHOLD = 0.0001
 # PURCHASE_SIZE = 1
 NUM_TRADES = 0
 start = 0.0
-TIME_TO_CLOSE = 1500.0
+TIME_TO_CLOSE = 1000.0
 TIME_TO_STOP_BUY = TIME_TO_CLOSE*.98 #equates to TIME_TO_CLOSE-15-18min on a normal trading day, calculated for when
 
 class Stock:
@@ -169,9 +169,9 @@ def two(stk, trader):
             stk.SO = True
             stk.state = 3
 
-    if (prediction - stk.current_price) / stk.current_price >= 2 * THRESHOLD and pressure > 0.0:
+    if (prediction - stk.current_price) / stk.current_price >= 5 * THRESHOLD and pressure > 0.0:
         # print("SHORTING "+stk.name)
-        trader.submitOrder(shift.Order(shift.Order.MARKET_SELL, stk.name, size=2))
+        trader.submitOrder(shift.Order(shift.Order.MARKET_SELL, stk.name, size=3))
         stk.S = True
         stk.H = True
         stk.state = 4
