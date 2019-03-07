@@ -49,7 +49,7 @@ BUFFER_SIZE = 50
 #state 0: initial state, gather data, get prediction
 #state 1: buy order is put in if the stock price increases by a certain percent
 THRESHOLD = 0.0000001
-PURCHASE_SIZE = 1
+# PURCHASE_SIZE = 1
 NUM_TRADES = 0
 start = 0.0
 TIME_TO_CLOSE = 1500.0
@@ -82,30 +82,31 @@ def zero(stk, trader):
     if (-1.0/3.0) <= pressure <= (1.0/3.0):
         return
     prediction = get_prediction(stk, trader)
-
+    PURCHASE_SIZE = purchasizing_size(stk,trader)
+    current_holding = trader.getPortfolioItem(stk.name).getShares()
+    if current_holding < 0:
+        PURCHASE_SIZE = PURCHASE_SIZE + abs(current_holding)
     stk.current_price = get_current_price(stk.name, trader)
     if (stk.current_price - prediction) / stk.current_price >= THRESHOLD and pressure < 0.0:
-        if expected_return(stk,trader, prediction,0.002):
-            limit_buy = shift.Order(shift.Order.LIMIT_BUY, stk.name, PURCHASE_SIZE, prediction)
-            trader.submitOrder(limit_buy)
-            stk.BO = True
-            stk.predicted_price = prediction
-            stk.state = 1
-            return
-
-        # print("Changed State from 0 to 1")
-    if (prediction - stk.current_price) / stk.current_price >= 2*THRESHOLD and pressure > 0.0:
-        # print("SHORTING "+stk.name)
-        trader.submitOrder(shift.Order(shift.Order.MARKET_SELL, stk.name, size=PURCHASE_SIZE))
-        stk.S = True
-        stk.H = True
-        stk.state = 4
-        stk.predicted_price = prediction
-        limit_buy = shift.Order(shift.Order.LIMIT_BUY, stk.name, PURCHASE_SIZE, stk.predicted_price)
+        limit_buy = shift.Order(shift.Order.LIMIT_BUY, stk.name, PURCHASE_SIZE, prediction)
         trader.submitOrder(limit_buy)
         stk.BO = True
-        NUM_TRADES+=1
+        stk.predicted_price = prediction
+        stk.state = 1
         return
+        # print("Changed State from 0 to 1")
+    # if (prediction - stk.current_price) / stk.current_price >= 2*THRESHOLD and pressure > 0.0:
+    #     # print("SHORTING "+stk.name)
+    #     trader.submitOrder(shift.Order(shift.Order.MARKET_SELL, stk.name, size=PURCHASE_SIZE))
+    #     stk.S = True
+    #     stk.H = True
+    #     stk.state = 4
+    #     stk.predicted_price = prediction
+    #     limit_buy = shift.Order(shift.Order.LIMIT_BUY, stk.name, PURCHASE_SIZE, stk.predicted_price)
+    #     trader.submitOrder(limit_buy)
+    #     stk.BO = True
+    #     NUM_TRADES+=1
+    #     return
 
 
 def one(stk, trader):
@@ -159,11 +160,27 @@ def two(stk, trader):
 
     if time.time() - start > TIME_TO_STOP_BUY:
         THRESHOLD /= 1.5
+
+    PURCHASE_SIZE = purchasizing_size(stk, trader)
     if (prediction - stk.current_price) / stk.current_price >= THRESHOLD and pressure > 0.0:
-        limit_sell = shift.Order(shift.Order.LIMIT_SELL, stk.name, PURCHASE_SIZE, prediction)
-        trader.submitOrder(limit_sell)
-        stk.SO = True
-        stk.state = 3
+        if expected_sell_return(stk,trader,prediction) > 2:
+            limit_sell = shift.Order(shift.Order.LIMIT_SELL, stk.name, PURCHASE_SIZE, prediction)
+            trader.submitOrder(limit_sell)
+            stk.SO = True
+            stk.state = 3
+
+    if (prediction - stk.current_price) / stk.current_price >= 2 * THRESHOLD and pressure > 0.0:
+        # print("SHORTING "+stk.name)
+        trader.submitOrder(shift.Order(shift.Order.MARKET_SELL, stk.name, size=PURCHASE_SIZE))
+        stk.S = True
+        stk.H = True
+        stk.state = 4
+        stk.predicted_price = prediction
+        limit_buy = shift.Order(shift.Order.LIMIT_BUY, stk.name, PURCHASE_SIZE, stk.predicted_price)
+        trader.submitOrder(limit_buy)
+        stk.BO = True
+        NUM_TRADES += 1
+        return
         # print("Changed state from 2 to 3")
 
 def three(stk, trader):
@@ -247,15 +264,43 @@ def get_prediction(stk, trader, p=3,d=1,q=0):
         prediction = stk.price[-1]
     return prediction
 
-def get_extroploated_prediction(stk, trader, p=3,d = 1, q = 0):
+def expected_sell_return(stk, trader, predicted_price):
+    '''
+    :param stk: The stock object
+    :param trader: The trader object
+    :param predicted_price: The predicted price
+    :return: The expected return after selling
+    '''
+    size = trader.getPortfolioItem(stk.name).getShares()
+    purchase_price = trader.getPortfolioItem.getPrice()
+    expected = size * (purchase_price - predicted_price - .002)
+    return expected
+
+def expected_return(stk, predicted_price, extrapolated_price, size):
+    '''
+
+    :param stk: The stock object
+    :param predicted_price: Purchase Price
+    :param extrapolated_price: 'Future Selling Price'
+    :param size: Size of Purchase Shares
+    :return: Expected Return
+    '''
+    purchase_price = predicted_price
+    predicted_price = extrapolated_price
+    expected = size*(purchase_price-predicted_price-.002)
+    return expected
+
+
+def get_extrapolated_prediction(stk, trader, p=3, d = 1, q=0):
     '''
     :param stk: The stock object
     :param trader: The trader object
     :param p: Default value 3
     :param d: Default value 1
     :param q: Default value 0
-    :return: A prediction as a float, extrapolated 30 values ahead
+    :return: A prediction as a float
     '''
+
     actual = trader.getSamplePrices(stk.name, midPrices=True)
     while len(actual) < 30: # Collect 30 data points
         actual = trader.getSamplePrices(stk.name, midPrices=True)
@@ -268,21 +313,39 @@ def get_extroploated_prediction(stk, trader, p=3,d = 1, q = 0):
         prediction = stk.price[-1]
     return prediction
 
-def expected_return(stk,trader,predicted_price,tc):
+def purchasizing_size (stk, trader):
     '''
+
     :param stk: The stock object
     :param trader: The trader object
-    :param predicted_price: The predicted price
-    :param tc: Transactional Costs: Market Order (.003) OR Limit Order(.002)
-    :return: Boolean True if (Expected Return > 2), else False
+    :return: The number of shares to purchase **returns**
     '''
-    size = trader.getPortfolioItem(stk.name).getShares()
-    purchase_price = trader.getPortfolioItem(stk.name).getPrice()
-    rtrn = size*(purchase_price-predicted_price-tc)
-    if rtrn > 2:
-        return True
+    buying_power = trader.getPortfolioSummary().getTotalBP()
+    current_price = get_prediction(stk, trader)
+    future_price = get_extrapolated_prediction(stk,trader)
+    if future_price > current_price:
+        shares = buying_power/current_price
+        shares = int(shares/100)
+        while True:
+            if shares == 0:
+                return 1
+            if shares > 3:
+                shares = 3
+            while shares > 1:
+                expected = expected_return(stk,current_price,future_price,shares)
+                res = 2/expected
+                if 0 < res < 0.7:
+                    return 3
+                else:
+                    shares = 2
+                    expected = expected_return(stk, current_price, future_price, shares)
+                    res = 2/expected
+                    if 0 < res < 1.3:
+                        return 2
+                    else:
+                        return 1
     else:
-        return False
+        return 1
 
 
 
@@ -297,6 +360,7 @@ def update_buy_order(stk, trader, price):
         if order.symbol == stk.name and order.type == shift.Order.LIMIT_BUY:
             order.type = shift.Order.CANCEL_BID
             trader.submitOrder(order)
+            PURCHASE_SIZE = purchasizing_size(stk, trader)
             limit_buy = shift.Order(shift.Order.LIMIT_BUY, stk.name, PURCHASE_SIZE, price)
             trader.submitOrder(limit_buy)
             return
@@ -316,6 +380,7 @@ def update_sell_order(stk, trader, price):
         if order.symbol == stk.name and order.type == shift.Order.LIMIT_SELL:
             order.type = shift.Order.CANCEL_ASK
             trader.submitOrder(order)
+            PURCHASE_SIZE = purchasizing_size(stk, trader)
             limit_sell = shift.Order(shift.Order.LIMIT_SELL, stk.name, PURCHASE_SIZE, price)
             trader.submitOrder(limit_sell)
             return
@@ -443,6 +508,9 @@ def cancelAllPendingOrders(trader):
     print("Waiting list size: " + str(trader.getWaitingListSize()))
     return
 
+def update_holdings(stk, trader):
+
+
 def printSummary(trader):
     """
     This method provides information on the structure of PortfolioSummary and PortfolioItem objects:
@@ -539,7 +607,7 @@ def main(argv):
             # time.sleep(10)
             # (B-A)/(B+A); Close to 1 -> going up; Close to -1 -> going down
         # time.sleep(10)
-        # printSummary(trader)
+        printSummary(trader)
 
     '''
     STEP 3
