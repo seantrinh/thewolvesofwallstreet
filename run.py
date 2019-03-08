@@ -4,32 +4,29 @@
 import shift
 import sys
 import time
-import random
-import pandas as pd
+#import random
+#import pandas as pd
 from statsmodels.tsa.arima_model import ARIMA
 #import keras
 from numpy.linalg import LinAlgError
-import statsmodels.api as sm
+#import statsmodels.api as sm
 
+#Sticker symbols of companies in the Dow Jones
 COMPANIES = ['MMM','AXP','AAPL','BA','CAT','CVX','CSCO','KO',
              'DIS','DWDP','XOM','GS','HD','IBM','INTC','JNJ',
              'JPM','MCD','MRK','MSFT','NKE','PFE','PG','TRV',
              'UTX','UNH','VZ','V','WMT','WBA']
-#Sticker symbols of companies in the Dow Jones
 
-NUM_COMPANIES = 30 #Number of companies in the Dow Jones
-MIN_TRANSACTIONS = 10 #Minimum number of transactions that need to be included to avoid $100,000 penalty
+NUM_COMPANIES = 30 # Number of companies in the Dow Jones
+MIN_TRANSACTIONS = 10 # Minimum number of transactions that need to be included to avoid $100,000 penalty
 
-account_balance = 1000000.00 #Beginning account balance, adjust as necessary
+account_balance = 1000000.00 # Beginning account balance, adjust as necessary
 BUFFER_SIZE = 50
-#state 0: initial state, gather data, get prediction
-#state 1: buy order is put in if the stock price increases by a certain percent
 THRESHOLD = 0.0004
-# PURCHASE_SIZE = 1
 NUM_TRADES = 0
 start = 0.0
 TIME_TO_CLOSE = 22800.0
-TIME_TO_STOP_BUY = TIME_TO_CLOSE*.92 #equates to TIME_TO_CLOSE-15-18min on a normal trading day, calculated for when
+TIME_TO_STOP_BUY = TIME_TO_CLOSE*.92 # Equates to TIME_TO_CLOSE-15-18min on a normal trading day, calculated for when
 TIME_TO_SELL = TIME_TO_CLOSE*.98
 
 class Stock:
@@ -55,27 +52,24 @@ def zero(stk, trader):
     if time.time() - start > TIME_TO_STOP_BUY:
         return
     pressure = get_pressure(stk.name, trader)
-    # pressure = -1.0
     if (-1.0/3.0) <= pressure <= (1.0/3.0):
         return
     prediction = get_prediction(stk, trader)
-    PURCHASE_SIZE = purchasizing_size(stk,trader)
+    purchase_size = purchasing_size(stk,trader)
     current_holding = trader.getPortfolioItem(stk.name).getShares()
     if current_holding < 0:
-        PURCHASE_SIZE = PURCHASE_SIZE + abs(current_holding)
-        PURCHASE_SIZE = int(PURCHASE_SIZE)
+        purchase_size = purchase_size + abs(current_holding)
+        purchase_size = int(purchase_size)
     stk.current_price = get_current_price(stk.name, trader)
     if (prediction - stk.current_price) / stk.current_price >= THRESHOLD and pressure < 0.0:
-        limit_buy = shift.Order(shift.Order.LIMIT_BUY, stk.name, PURCHASE_SIZE, prediction)
+        limit_buy = shift.Order(shift.Order.LIMIT_BUY, stk.name, purchase_size, prediction)
         trader.submitOrder(limit_buy)
         stk.BO = True
         stk.predicted_price = prediction
         stk.state = 1
         return
-        # print("Changed State from 0 to 1")
     # SHORTING PORTION
-    if (prediction - stk.current_price) / stk.current_price <= -1.5*THRESHOLD and pressure > 0.0:
-        # print("SHORTING "+stk.name)
+    if (prediction - stk.current_price) / stk.current_price <= -1.5 * THRESHOLD and pressure > 0.0:
         trader.submitOrder(shift.Order(shift.Order.MARKET_SELL, stk.name, size=2))
         stk.S = True
         stk.H = True
@@ -94,20 +88,16 @@ def one(stk, trader):
         stk.BO = False
         stk.H = True
         stk.state = 2
-
-        NUM_TRADES+=1
-        # print("Changed State from 1 to 2")
+        NUM_TRADES += 1
         return
-    if time.time()-start>TIME_TO_STOP_BUY:
+    if time.time()-start > TIME_TO_STOP_BUY:
         cancel_buy_order(stk.name,trader)
         stk.BO = False
-        stk.state = 0;
+        stk.state = 0
         return
     pressure = get_pressure(stk.name, trader)
-    # pressure = -1.0
     if (-1.0 / 3.0) <= pressure <= (1.0 / 3.0):
         return
-
     prediction = get_prediction(stk, trader)
     stk.current_price = get_current_price(stk.name, trader)
     if prediction < stk.predicted_price and prediction < stk.current_price and pressure < 0.0:
@@ -131,20 +121,19 @@ def two(stk, trader):
         NUM_TRADES += 1
         return
     pressure = get_pressure(stk.name, trader)
-    # pressure = 1.0
     if (-1.0 / 3.0) <= pressure <= (1.0 / 3.0):
         return
     prediction = get_prediction(stk, trader)
 
     # if time.time() - start > TIME_TO_STOP_BUY:
     #     THRESHOLD /= 1.5
-    PURCHASE_SIZE = trader.getPortfolioItem(stk.name).getShares()
-    if PURCHASE_SIZE < 0:
+    purchase_size = trader.getPortfolioItem(stk.name).getShares()
+    if purchase_size < 0:
         return
 
     if (prediction - stk.current_price) / stk.current_price <= -1.0*THRESHOLD and pressure > 0.0:
         if expected_sell_return(stk, trader, prediction) > 0:
-            limit_sell = shift.Order(shift.Order.LIMIT_SELL, stk.name, PURCHASE_SIZE, prediction)
+            limit_sell = shift.Order(shift.Order.LIMIT_SELL, stk.name, purchase_size, prediction)
             trader.submitOrder(limit_sell)
             stk.SO = True
             stk.state = 3
@@ -204,7 +193,6 @@ def three(stk, trader):
         stk.state = 0
         global NUM_TRADES
         NUM_TRADES += 1
-        # print("Changed state from 3 to 0")
         return
     price_current = get_current_price(stk.name, trader)
     if ( stk.current_price - price_current) / stk.current_price >= .25:
@@ -214,7 +202,6 @@ def three(stk, trader):
         stk.state = 0
         return
     pressure = get_pressure(stk.name, trader)
-    # pressure = 1.0
     if (-1.0 / 3.0) <= pressure <= (1.0 / 3.0):
         return
 
@@ -235,13 +222,11 @@ def four(stk,trader):
         stk.H = False
         stk.state = 0
         global NUM_TRADES
-        NUM_TRADES+=1
-        # print("Changed State from 1 to 2")
+        NUM_TRADES += 1
         return
     # if time.time()-start>TIME_TO_STOP_BUY:
     #     THRESHOLD/=2.0
     pressure = get_pressure(stk.name, trader)
-    # pressure = -1.0
     if (-1.0 / 3.0) <= pressure <= (1.0 / 3.0):
         return
 
@@ -251,7 +236,6 @@ def four(stk,trader):
         update_buy_order(stk, trader, prediction)
         stk.predicted_price = prediction
         return
-
 
 STATES_TRANSITION = {0:zero, 1:one, 2:two, 3:three, 4: four}
 
@@ -288,10 +272,8 @@ def expected_sell_return(stk, trader, predicted_price):
     expected = size * (predicted_price - purchase_price - 0.002)
     return expected
 
-def expected_return(stk, predicted_price, extrapolated_price):
+def expected_return(predicted_price, extrapolated_price):
     '''
-
-    :param stk: The stock object
     :param predicted_price: Purchase Price
     :param extrapolated_price: 'Future Selling Price'
     :param size: Size of Purchase Shares
@@ -301,7 +283,6 @@ def expected_return(stk, predicted_price, extrapolated_price):
     predicted_price = extrapolated_price
     expected = (predicted_price-purchase_price-.002)
     return expected
-
 
 def get_extrapolated_prediction(stk, trader, p=3, d = 1, q=0):
     '''
@@ -324,9 +305,8 @@ def get_extrapolated_prediction(stk, trader, p=3, d = 1, q=0):
         prediction = stk.price[-1]
     return prediction
 
-def purchasizing_size (stk, trader):
+def purchasing_size(stk, trader):
     '''
-
     :param stk: The stock object
     :param trader: The trader object
     :return: The number of shares to purchase **returns**
@@ -339,17 +319,17 @@ def purchasizing_size (stk, trader):
         shares = int(shares/100)
         if shares == 0:
             return 1
-        if shares > 4:
-            shares = 4
+        #if shares > 4:
+        #    shares = 4
         trend = future_price - current_price
         if trend > 0:
-            expected = expected_return(stk,current_price,future_price)
-            retrn = 3/expected
-            if 0 < retrn < 1.0:
+            expected = expected_return(current_price,future_price)
+            return_size = 3/expected
+            if 0 < return_size < 1.0:
                 return 4
-            elif 0.99 < retrn < 2:
+            elif 0.99 < return_size < 2:
                 return 3
-            elif 1.99 < retrn < 3:
+            elif 1.99 < return_size < 3:
                 return 2
             else:
                 return 1
@@ -396,8 +376,8 @@ def update_buy_order(stk, trader, price):
         if order.symbol == stk.name and order.type == shift.Order.LIMIT_BUY:
             order.type = shift.Order.CANCEL_BID
             trader.submitOrder(order)
-            PURCHASE_SIZE = purchasizing_size(stk, trader)
-            limit_buy = shift.Order(shift.Order.LIMIT_BUY, stk.name, PURCHASE_SIZE, price)
+            purchase_size = purchasing_size(stk, trader)
+            limit_buy = shift.Order(shift.Order.LIMIT_BUY, stk.name, purchase_size, price)
             trader.submitOrder(limit_buy)
             return
     stk.current_price = stk.predicted_price
@@ -416,8 +396,8 @@ def update_sell_order(stk, trader, price):
         if order.symbol == stk.name and order.type == shift.Order.LIMIT_SELL:
             order.type = shift.Order.CANCEL_ASK
             trader.submitOrder(order)
-            PURCHASE_SIZE = trader.getPortfolioItem(stk.name).getShares()
-            limit_sell = shift.Order(shift.Order.LIMIT_SELL, stk.name, PURCHASE_SIZE, price)
+            purchase_size = trader.getPortfolioItem(stk.name).getShares()
+            limit_sell = shift.Order(shift.Order.LIMIT_SELL, stk.name, purchase_size, price)
             trader.submitOrder(limit_sell)
             return
     stk.SO = False
@@ -463,7 +443,6 @@ def stop_loss(stock, trader):
     :param trader: The trader object
     :return: N/A
     '''
-    # print("stop loss")
     cancel_sell_order(stock,trader)
     portfolio_item = trader.getPortfolioItem(stock)
     num_shares = int(portfolio_item.getShares()/100)
@@ -578,6 +557,67 @@ def request_prices(trader):
     while not flag:
         flag = trader.requestSamplePrices(COMPANIES)
 
+def start_selling(trader, stock_data):
+    '''
+    :param trader: The trader object
+    :param stock_data: The list of stock objects
+    :return: N/A
+    '''
+    for stk in stock_data:
+        global THRESHOLD
+        global NUM_TRADES
+        # price_current = get_current_price(stk.name, trader)
+        pressure = get_pressure(stk.name, trader)
+        prediction = get_prediction(stk, trader)
+
+        # if time.time() - start > TIME_TO_STOP_BUY:
+        #     THRESHOLD /= 1.5
+        purchase_size = trader.getPortfolioItem(stk.name).getShares()
+        if purchase_size < 0:
+            continue
+        if (prediction - stk.current_price) / stk.current_price <= -1.0 * THRESHOLD and pressure > 0.0:
+            if expected_sell_return(stk, trader, prediction) > 0:
+                limit_sell = shift.Order(shift.Order.LIMIT_SELL, stk.name, purchase_size, prediction)
+                trader.submitOrder(limit_sell)
+                stk.SO = True
+                stk.state = 3
+                continue
+
+def cancel_all_buy_sell(trader):
+    '''
+    :param trader: The trader object
+    :return: N/A
+    '''
+    for order in trader.getWaitingList():
+        if order.type == shift.Order.LIMIT_BUY:
+            order.type = shift.Order.CANCEL_BID
+            trader.submitOrder(order)
+        elif order.type == shift.Order.LIMIT_SELL:
+            order.type = shift.Order.CANCEL_ASK
+            trader.submitOrder(order)
+
+def market_close_positions(trader):
+    '''
+    :param trader: The trader object
+    :return: N/A
+    '''
+    for company in COMPANIES:
+        # For all holdings, market sell them
+        # For all short positions, market buy
+        # If no holdings for a particular company, do nothing
+        portfolio_item = trader.getPortfolioItem(company)
+        num_shares = int(portfolio_item.getShares()/100)
+        bid_book = trader.getOrderBook(company, shift.OrderBookType.GLOBAL_BID, 1)
+        print(bid_book[0].price)
+        global NUM_TRADES
+        if num_shares > 0:
+            trader.submitOrder(shift.Order(shift.Order.MARKET_SELL,company,size = num_shares)) #Sell at market price
+            NUM_TRADES += 1
+        elif num_shares < 0:
+            trader.submitOrder(shift.Order(shift.Order.MARKET_BUY, company, size = -1 * num_shares))
+            NUM_TRADES += 1
+        #Update log with transaction
+
 def main(argv):
     '''
     STEP 0
@@ -602,8 +642,6 @@ def main(argv):
     # 6.5 hours = 23400
     global start
     start = time.time()
-    #Create PortfolioItems for each company?
-    #Create PortfolioSummary
 
     '''
     STEP 2
@@ -612,99 +650,37 @@ def main(argv):
     stock_data = []
     for company in COMPANIES:
        stock_data.append(Stock(company))
-    # stock_data.append(Stock(COMPANIES[2]))
 
     request_prices(trader) # Make the connection to get sample prices (requestSamplePrices) for all companies
 
-    while time.time() - start < TIME_TO_STOP_BUY: # 22500 corresponds to 3:45
-        #Execute trades and stuff
-        s = time.time()
+    while time.time() - start < TIME_TO_STOP_BUY:
         for stk in stock_data:
             STATES_TRANSITION[stk.state](stk, trader) # Execute the state diagram for each stock
-        # time.sleep(10)
         printSummary(trader)
 
     '''
     STEP 3
     '''
-    # num_executed_transactions = trader.getSubmittedOrdersSize() - trader.getWaitingListSize()
-    # if num_executed_transactions < MIN_TRANSACTIONS:
-    #     # getSubmittedOrdersSize returns # transactions both executed & not executed, excluding cancellation requests
-    #     # getWaitingListSize returns # transactions not executed
-    #
-    #     for i in range(int((MIN_TRANSACTIONS - num_executed_transactions)/2)):
-    #         #buy and then sell, both at market price
-    #         comp = random.randint(0, NUM_COMPANIES - 1)
-    #         company = COMPANIES[comp]
-    #
-    #         while get_pressure(company, trader) <= (1.0/3.0) and time.time() - start < 22900:
-    #             company = COMPANIES[random.randint(0, NUM_COMPANIES - 1)]
-    #
-    #         trader.submitOrder(shift.Order(shift.Order.MARKET_BUY, company, size=1))
-    #         time.sleep(10)
-    #         # printSummary(trader)
-    #         trader.submitOrder(shift.Order(shift.Order.MARKET_SELL, company, size=1))
-    #         time.sleep(10)
-    #         # printSummary(trader)
     while time.time() - start < TIME_TO_SELL:
-        for stk in stock_data:
-            global THRESHOLD
-            global NUM_TRADES
-            price_current = get_current_price(stk.name, trader)
-            pressure = get_pressure(stk.name, trader)
-            # pressure = 1.0
-            prediction = get_prediction(stk, trader)
+        start_selling(trader, stock_data) # Start trying to sell at a profit before the end of the day
 
-            # if time.time() - start > TIME_TO_STOP_BUY:
-            #     THRESHOLD /= 1.5
-            PURCHASE_SIZE = trader.getPortfolioItem(stk.name).getShares()
-            if PURCHASE_SIZE < 0:
-                continue
-            if (prediction - stk.current_price) / stk.current_price <= -1.0 * THRESHOLD and pressure > 0.0:
-                if expected_sell_return(stk, trader, prediction) > 0:
-                    limit_sell = shift.Order(shift.Order.LIMIT_SELL, stk.name, PURCHASE_SIZE, prediction)
-                    trader.submitOrder(limit_sell)
-                    stk.SO = True
-                    stk.state = 3
-                    continue
+    trader.cancelAllSamplePricesRequests() # Cancel the sample prices connection
 
-    #Do this at 3:59?
-    trader.cancelAllSamplePricesRequests() #Cancel the sample prices connection
-    # Cancel all buy orders and sell orders
-    for order in trader.getWaitingList():
-        if order.type == shift.Order.LIMIT_BUY:
-            order.type = shift.Order.CANCEL_BID
-            trader.submitOrder(order)
-        elif order.type == shift.Order.LIMIT_SELL:
-            order.type = shift.Order.CANCEL_ASK
-            trader.submitOrder(order)
+    cancel_all_buy_sell(trader) # Cancel all buy orders and sell orders
 
-    #cancelAllPendingOrders(trader)
     for order in trader.getWaitingList():
         print("%6s\t%21s\t%7.2f\t\t%4d\t%36s\t%26s" %
               (order.symbol, order.type, order.price, order.size, order.id, order.timestamp))
-    while trader.getWaitingListSize() != 0: #Wait for the orders to go through
+
+    while trader.getWaitingListSize() != 0: # Wait for the orders to go through
         print("Waiting")
         time.sleep(3)
 
-    for company in COMPANIES:
-        # For all holdings, market sell them
-        # For all short positions, market buy
-        # If no holdings for a particular company, do nothing
-        portfolio_item = trader.getPortfolioItem(company)
-        num_shares = int(portfolio_item.getShares()/100)
-        bid_book = trader.getOrderBook(company, shift.OrderBookType.GLOBAL_BID, 1)
-        print(bid_book[0].price)
-        global NUM_TRADES
-        if num_shares > 0:
-            trader.submitOrder(shift.Order(shift.Order.MARKET_SELL,company,size = num_shares) )#Sell at market price
-            NUM_TRADES += 1
-        elif num_shares < 0:
-            trader.submitOrder(shift.Order(shift.Order.MARKET_BUY, company, size = -1*num_shares))
-            NUM_TRADES += 1
-        #Update log with transaction
+    # Close all positions
+    # Market sell inventory and market buy shorted positions
+    market_close_positions(trader)
 
-    print("printing submitted orders")
+    print("Printing submitted orders")
     for order in trader.getSubmittedOrders():
         print("%6s\t%21s\t%7.2f\t\t%4d\t%36s\t%26s" %
               (order.symbol, order.type, order.price, order.size, order.id, order.timestamp))
