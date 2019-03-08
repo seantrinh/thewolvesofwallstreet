@@ -1,26 +1,6 @@
 '''
     @authors: Aaron John, Sean Trinh, Hariharan Vijayachandran
-    Step 0:
-        Connect
-    Step 1:
-	    Collect data (every few seconds for one iteration) until you get a set amount of dataset
-    Step 2:
-	    While it’s still earlier than (insert time here):
-		    Calculate ARIMA for all 30
-		    Check thresholds
-			    Execute trades accordingly if thresholds are met
-				    If buying, check to see if we have the correct balance
-			    Insert pending and successful transactions into log (SQL)
-			    Update inventory
-    Step 3:
-	    Once it is the specified time or later:
-		    Make sure you have done the required number of trades (if not, do instant trades)
-			    Execute 10 or $100,000 penalty
-		    Market sell
-		    Cancel all pending orders
-		    Update log of market sell and cancel pending orders
-    Step 4:
-        Disconnect
+
 '''
 import shift
 import sys
@@ -52,7 +32,7 @@ THRESHOLD = 0.0004
 # PURCHASE_SIZE = 1
 NUM_TRADES = 0
 start = 0.0
-TIME_TO_CLOSE = 1200.0
+TIME_TO_CLOSE = 1800.0
 TIME_TO_STOP_BUY = TIME_TO_CLOSE*.92 #equates to TIME_TO_CLOSE-15-18min on a normal trading day, calculated for when
 TIME_TO_SELL = TIME_TO_CLOSE*.98
 
@@ -650,51 +630,12 @@ def main(argv):
         s = time.time()
         for stk in stock_data:
             STATES_TRANSITION[stk.state](stk, trader)
-            # print(stk.state)
-            # sample = trader.getSamplePrices(stk.name, midPrices=True)
-            #
-            # #s = time.time()
-            # while(len(sample)<31): # Collect 30 data points per company
-            #     sample = trader.getSamplePrices(stk.name, midPrices=True)
-            #
-            # #print("Received Sample: "+str(time.time()-s))
-            # s = time.time()
-            # stk.add_data(sample)
-            # print(sample)
-            # # frame = pd.DataFrame(stk.price)
-            # model = ARIMA(stk.price, order = (0,1,0)) # Make ARIMA model
-            # model_fit = model.fit(disp=0)
-            # print("Computed ARIMA: "+str(time.time()-s))
-            # print(model_fit.summary())
-            # time.sleep(10)
-            # (B-A)/(B+A); Close to 1 -> going up; Close to -1 -> going down
-        # time.sleep(10)
         printSummary(trader)
 
     '''
     STEP 3
     '''
-    #Time is now past 3:45
 
-    # num_executed_transactions = trader.getSubmittedOrdersSize() - trader.getWaitingListSize()
-    # if num_executed_transactions < MIN_TRANSACTIONS:
-    #     # getSubmittedOrdersSize returns # transactions both executed & not executed, excluding cancellation requests
-    #     # getWaitingListSize returns # transactions not executed
-    #
-    #     for i in range(int((MIN_TRANSACTIONS - num_executed_transactions)/2)):
-    #         #buy and then sell, both at market price
-    #         comp = random.randint(0, NUM_COMPANIES - 1)
-    #         company = COMPANIES[comp]
-    #
-    #         while get_pressure(company, trader) <= (1.0/3.0) and time.time() - start < 22900:
-    #             company = COMPANIES[random.randint(0, NUM_COMPANIES - 1)]
-    #
-    #         trader.submitOrder(shift.Order(shift.Order.MARKET_BUY, company, size=1))
-    #         time.sleep(10)
-    #         # printSummary(trader)
-    #         trader.submitOrder(shift.Order(shift.Order.MARKET_SELL, company, size=1))
-    #         time.sleep(10)
-    #         # printSummary(trader)
     while time.time() - start < TIME_TO_SELL:
         for stk in stock_data:
             global THRESHOLD
@@ -702,7 +643,7 @@ def main(argv):
             price_current = get_current_price(stk.name, trader)
             pressure = get_pressure(stk.name, trader)
             # pressure = 1.0
-            prediction = get_prediction(stk, trader)
+            prediction = get_prediction(stk, trader,1,1,0)
 
             # if time.time() - start > TIME_TO_STOP_BUY:
             #     THRESHOLD /= 1.5
@@ -716,6 +657,7 @@ def main(argv):
                     stk.SO = True
                     stk.state = 3
                     continue
+    time.sleep(10)
 
     #Do this at 3:59?
     trader.cancelAllSamplePricesRequests() #Cancel the sample prices connection
@@ -771,9 +713,7 @@ def main(argv):
     printSummary(trader)
     time.sleep(10)
     print(trader.getPortfolioSummary().getTotalBP())
-    #if time.time() - start >= 23328: # 23328 corresponds to 3:59ish
-        #trader.cancelAllPendingOrders() #Cancel all pending orders
-        #demo05(trader)
+
 
     '''
     STEP 4
