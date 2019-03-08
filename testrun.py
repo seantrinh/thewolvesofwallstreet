@@ -48,13 +48,13 @@ account_balance = 1000000.00 #Beginning account balance, adjust as necessary
 BUFFER_SIZE = 50
 #state 0: initial state, gather data, get prediction
 #state 1: buy order is put in if the stock price increases by a certain percent
-THRESHOLD = 0.00035
+THRESHOLD = 0.0004
 # PURCHASE_SIZE = 1
 NUM_TRADES = 0
 start = 0.0
 TIME_TO_CLOSE = 1000.0
-TIME_TO_STOP_BUY = TIME_TO_CLOSE*.93 #equates to TIME_TO_CLOSE-15-18min on a normal trading day, calculated for when
-TIME_TO_SELL = TIME_TO_CLOSE*.97
+TIME_TO_STOP_BUY = TIME_TO_CLOSE*.92 #equates to TIME_TO_CLOSE-15-18min on a normal trading day, calculated for when
+TIME_TO_SELL = TIME_TO_CLOSE*.98
 
 class Stock:
     def __init__(self,comp_name):
@@ -71,8 +71,8 @@ class Stock:
 
     def add_data(self,prices):
         self.price += prices
-        if len(self.price) > 50 :
-            self.price = self.price[10:]
+        if len(self.price) > 90 :
+            self.price = self.price[30:]
 
 def zero(stk, trader):
     global NUM_TRADES
@@ -87,6 +87,7 @@ def zero(stk, trader):
     current_holding = trader.getPortfolioItem(stk.name).getShares()
     if current_holding < 0:
         PURCHASE_SIZE = PURCHASE_SIZE + abs(current_holding)
+        PURCHASE_SIZE = int(PURCHASE_SIZE)
     stk.current_price = get_current_price(stk.name, trader)
     if (prediction - stk.current_price) / stk.current_price >= THRESHOLD and pressure < 0.0:
         limit_buy = shift.Order(shift.Order.LIMIT_BUY, stk.name, PURCHASE_SIZE, prediction)
@@ -296,7 +297,7 @@ def get_prediction(stk, trader, p=3,d=1,q=0):
     try:
         model = ARIMA(stk.price, order=(p,d,q))
         model_fit = model.fit(disp = 0)
-        prediction = model_fit.forecast(4)[0][3]
+        prediction = model_fit.forecast(5)[0][4]
     except (ValueError, LinAlgError):
         prediction = stk.price[-1]
     return prediction
@@ -363,19 +364,39 @@ def purchasizing_size (stk, trader):
     if future_price > current_price:
         shares = buying_power/current_price
         shares = int(shares/100)
-        while True:
-            if shares == 0:
+        if shares == 0:
+            return 1
+        if shares > 4:
+            shares = 4
+        trend = future_price - current_price
+        if trend > 0:
+            expected = expected_return(stk,current_price,future_price)
+            retrn = 3/expected
+            if 0 < retrn < 1.0:
+                return 4
+            elif 0.99 < retrn < 2:
+                return 3
+            elif 1.99 < retrn < 3:
+                return 2
+            else:
                 return 1
-            if shares > 4:
-                shares = 4
-            while shares > 1:
-                expected = 2/expected_return(stk,current_price,future_price)
-                if 0 < expected < 0.7:
-                    return 4
-                elif 0.69 < expected < 1.3:
-                    return 3
-                else:
-                    return 2
+        else:
+            return 1
+    else:
+        return 1
+        # while True:
+        #     if shares == 0:
+        #         return 1
+        #     if shares > 4:
+        #         shares = 4
+            # while shares > 1:
+            #     expected = 2/expected_return(stk,current_price,future_price)
+            #     if 0 < expected < 0.7:
+            #         return 4
+            #     elif 0.69 < expected < 1.3:
+            #         return 3
+            #     else:
+            #         return 2
                 # expected = expected_return(stk,current_price,future_price,shares)
                 # res = 2/expected
                 # if 0 < res < 0.7:
@@ -388,8 +409,8 @@ def purchasizing_size (stk, trader):
                 #         return 3
                 #     else:
                 #         return 2
-    else:
-        return 1
+    # else:
+    #     return 1
 
 def update_buy_order(stk, trader, price):
     '''
@@ -687,13 +708,13 @@ def main(argv):
             #     THRESHOLD /= 1.5
             PURCHASE_SIZE = trader.getPortfolioItem(stk.name).getShares()
             if PURCHASE_SIZE < 0:
-                return
+                continue
             if (prediction - stk.current_price) / stk.current_price <= -1.0 * THRESHOLD and pressure > 0.0:
                 limit_sell = shift.Order(shift.Order.LIMIT_SELL, stk.name, PURCHASE_SIZE, prediction)
                 trader.submitOrder(limit_sell)
                 stk.SO = True
                 stk.state = 3
-                return
+                continue
 
     #Do this at 3:59?
     trader.cancelAllSamplePricesRequests() #Cancel the sample prices connection
