@@ -83,9 +83,9 @@ def zero(stk, trader):
         return
     prediction = get_prediction(stk, trader)
     PURCHASE_SIZE = purchasizing_size(stk,trader)
-    current_holding = trader.getPortfolioItem(stk.name).getShares()
-    if current_holding < 0:
-        PURCHASE_SIZE = PURCHASE_SIZE + abs(current_holding)
+    # current_holding = trader.getPortfolioItem(stk.name).getShares()
+    # if current_holding < 0:
+    #     PURCHASE_SIZE = PURCHASE_SIZE + abs(current_holding)
     stk.current_price = get_current_price(stk.name, trader)
     if (stk.current_price - prediction) / stk.current_price >= THRESHOLD and pressure < 0.0:
         limit_buy = shift.Order(shift.Order.LIMIT_BUY, stk.name, PURCHASE_SIZE, prediction)
@@ -95,18 +95,18 @@ def zero(stk, trader):
         stk.state = 1
         return
         # print("Changed State from 0 to 1")
-    # if (prediction - stk.current_price) / stk.current_price >= 2*THRESHOLD and pressure > 0.0:
-    #     # print("SHORTING "+stk.name)
-    #     trader.submitOrder(shift.Order(shift.Order.MARKET_SELL, stk.name, size=PURCHASE_SIZE))
-    #     stk.S = True
-    #     stk.H = True
-    #     stk.state = 4
-    #     stk.predicted_price = prediction
-    #     limit_buy = shift.Order(shift.Order.LIMIT_BUY, stk.name, PURCHASE_SIZE, stk.predicted_price)
-    #     trader.submitOrder(limit_buy)
-    #     stk.BO = True
-    #     NUM_TRADES+=1
-    #     return
+    if (prediction - stk.current_price) / stk.current_price >= -2.5*THRESHOLD and pressure > 0.0:
+        # print("SHORTING "+stk.name)
+        trader.submitOrder(shift.Order(shift.Order.MARKET_SELL, stk.name, size=3))
+        stk.S = True
+        stk.H = True
+        stk.state = 4
+        stk.predicted_price = prediction
+        limit_buy = shift.Order(shift.Order.LIMIT_BUY, stk.name, 3, stk.predicted_price)
+        trader.submitOrder(limit_buy)
+        stk.BO = True
+        NUM_TRADES+=1
+        return
 
 
 def one(stk, trader):
@@ -146,7 +146,7 @@ def two(stk, trader):
     global THRESHOLD
     global NUM_TRADES
     price_current = get_current_price(stk.name, trader)
-    if (stk.current_price - price_current) / stk.current_price >= .075:
+    if (stk.current_price - price_current) / stk.current_price >= .01:
         stop_loss(stk.name,trader)
         stk.H = False
         stk.state = 0
@@ -160,27 +160,45 @@ def two(stk, trader):
 
     # if time.time() - start > TIME_TO_STOP_BUY:
     #     THRESHOLD /= 1.5
-
     PURCHASE_SIZE = trader.getPortfolioItem(stk.name).getShares()
     if (prediction - stk.current_price) / stk.current_price >= THRESHOLD and pressure > 0.0:
-        if expected_sell_return(stk,trader,prediction) > 2:
+        if expected_sell_return(stk, trader, prediction) > 2:
             limit_sell = shift.Order(shift.Order.LIMIT_SELL, stk.name, PURCHASE_SIZE, prediction)
             trader.submitOrder(limit_sell)
             stk.SO = True
             stk.state = 3
 
-    if (prediction - stk.current_price) / stk.current_price >= 5 * THRESHOLD and pressure > 0.0:
-        # print("SHORTING "+stk.name)
-        trader.submitOrder(shift.Order(shift.Order.MARKET_SELL, stk.name, size=3))
-        stk.S = True
-        stk.H = True
-        stk.state = 4
-        stk.predicted_price = prediction
-        limit_buy = shift.Order(shift.Order.LIMIT_BUY, stk.name, 2, stk.predicted_price)
-        trader.submitOrder(limit_buy)
-        stk.BO = True
-        NUM_TRADES += 1
-        return
+    current_holding = trader.getPortfolioItem(stk.name).getShares()
+    if current_holding < 0:
+        if (stk.current_price - prediction) / stk.current_price >= THRESHOLD and pressure < 0.0:
+            limit_buy = shift.Order(shift.Order.LIMIT_BUY, stk.name, current_holding, prediction)
+            trader.submitOrder(limit_buy)
+            stk.BO = True
+            stk.predicted_price = prediction
+            stk.state = 1
+            return
+
+
+    # PURCHASE_SIZE = trader.getPortfolioItem(stk.name).getShares()
+    # if (prediction - stk.current_price) / stk.current_price >= THRESHOLD and pressure > 0.0:
+    #     if expected_sell_return(stk,trader,prediction) > 2:
+    #         limit_sell = shift.Order(shift.Order.LIMIT_SELL, stk.name, PURCHASE_SIZE, prediction)
+    #         trader.submitOrder(limit_sell)
+    #         stk.SO = True
+    #         stk.state = 3
+
+    # if (prediction - stk.current_price) / stk.current_price >= 5 * THRESHOLD and pressure > 0.0:
+    #     # print("SHORTING "+stk.name)
+    #     trader.submitOrder(shift.Order(shift.Order.MARKET_SELL, stk.name, size=3))
+    #     stk.S = True
+    #     stk.H = True
+    #     stk.state = 4
+    #     stk.predicted_price = prediction
+    #     limit_buy = shift.Order(shift.Order.LIMIT_BUY, stk.name, 2, stk.predicted_price)
+    #     trader.submitOrder(limit_buy)
+    #     stk.BO = True
+    #     NUM_TRADES += 1
+    #     return
         # print("Changed state from 2 to 3")
 
 def three(stk, trader):
@@ -259,7 +277,7 @@ def get_prediction(stk, trader, p=3,d=1,q=0):
     try:
         model = ARIMA(stk.price, order=(p,d,q))
         model_fit = model.fit(disp = 0)
-        prediction = model_fit.forecast(5)[0][4]
+        prediction = model_fit.forecast(4)[0][3]
     except (ValueError, LinAlgError):
         prediction = stk.price[-1]
     return prediction
@@ -276,7 +294,7 @@ def expected_sell_return(stk, trader, predicted_price):
     expected = size * (purchase_price - predicted_price - .002)
     return expected
 
-def expected_return(stk, predicted_price, extrapolated_price, size):
+def expected_return(stk, predicted_price, extrapolated_price):
     '''
 
     :param stk: The stock object
@@ -287,7 +305,7 @@ def expected_return(stk, predicted_price, extrapolated_price, size):
     '''
     purchase_price = predicted_price
     predicted_price = extrapolated_price
-    expected = size*(purchase_price-predicted_price-.002)
+    expected = (predicted_price-purchase_price-.002)
     return expected
 
 
@@ -308,7 +326,7 @@ def get_extrapolated_prediction(stk, trader, p=3, d = 1, q=0):
     try:
         model = ARIMA(stk.price, order=(p,d,q))
         model_fit = model.fit(disp = 0)
-        prediction = model_fit.forecast(20)[0][19]
+        prediction = model_fit.forecast(10)[0][9]
     except (ValueError, LinAlgError):
         prediction = stk.price[-1]
     return prediction
@@ -332,22 +350,27 @@ def purchasizing_size (stk, trader):
             if shares > 4:
                 shares = 4
             while shares > 1:
-                expected = expected_return(stk,current_price,future_price,shares)
-                res = 2/expected
-                if 0 < res < 0.7:
+                expected = 2/expected_return(stk,current_price,future_price)
+                if 0 < expected < 0.7:
                     return 4
+                elif 0.69 < expected < 1.3:
+                    return 3
                 else:
-                    shares = 3
-                    expected = expected_return(stk, current_price, future_price, shares)
-                    res = 2/expected
-                    if 0 < res < 1.3:
-                        return 3
-                    else:
-                        return 2
+                    return 2
+                # expected = expected_return(stk,current_price,future_price,shares)
+                # res = 2/expected
+                # if 0 < res < 0.7:
+                #     return 4
+                # else:
+                #     shares = 3
+                #     expected = expected_return(stk, current_price, future_price, shares)
+                #     res = 2/expected
+                #     if 0 < res < 1.3:
+                #         return 3
+                #     else:
+                #         return 2
     else:
         return 1
-
-
 
 def update_buy_order(stk, trader, price):
     '''
@@ -549,7 +572,7 @@ def main(argv):
     STEP 0
     '''
     # create trader object
-    trader = shift.Trader("test001") #Change this?
+    trader = shift.Trader("test002") #Change this?
     # trader = shift.Trader("wolves_of_wall_street")
 
     # connect and subscribe to all available order books
