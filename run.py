@@ -664,9 +664,12 @@ def main(argv):
     while time.time() - start < TIME_TO_SELL:
         start_selling(trader, stock_data) # Start trying to sell at a profit before the end of the day
 
+    print("DONE BUYING")
+
     trader.cancelAllSamplePricesRequests() # Cancel the sample prices connection
 
     cancel_all_buy_sell(trader) # Cancel all buy orders and sell orders
+    print("CANCELLED ALL BUY/SELL ORDERS")
 
     for order in trader.getWaitingList():
         print("%6s\t%21s\t%7.2f\t\t%4d\t%36s\t%26s" %
@@ -679,6 +682,7 @@ def main(argv):
     # Close all positions
     # Market sell inventory and market buy shorted positions
     market_close_positions(trader)
+    print("SUBMITTED MARKET ORDERS")
 
     print("Printing submitted orders")
     for order in trader.getSubmittedOrders():
