@@ -248,9 +248,9 @@ def get_prediction(stk, trader, p=3,d=1,q=0):
     :param q: Default value 0
     :return: A prediction as a float
     '''
-    actual = trader.getSamplePrices(stk.name, midPrices=True)
+    actual = trader.getSamplePrices(stk.name, mid_prices=True)
     while len(actual) < 30: # Collect 30 data points
-        actual = trader.getSamplePrices(stk.name, midPrices=True)
+        actual = trader.getSamplePrices(stk.name, mid_prices=True)
     stk.add_data(actual)
     try:
         model = ARIMA(stk.price, order=(p,d,q))
@@ -293,9 +293,9 @@ def get_extrapolated_prediction(stk, trader, p=3, d = 1, q=0):
     :param q: Default value 0
     :return: A prediction as a float
     '''
-    actual = trader.getSamplePrices(stk.name, midPrices=True)
+    actual = trader.getSamplePrices(stk.name, mid_prices=True)
     while len(actual) < 30: # Collect 30 data points
-        actual = trader.getSamplePrices(stk.name, midPrices=True)
+        actual = trader.getSamplePrices(stk.name, mid_prices=True)
     stk.add_data(actual)
     try:
         model = ARIMA(stk.price, order=(p,d,q))
