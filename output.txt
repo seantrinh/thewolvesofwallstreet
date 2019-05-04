@@ -1,945 +1,1573 @@
 [[32;1;1mINFO[0m] Connection established.
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+        0.00	           0	     0.00	2019-05-03 11:17:09.718653
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+        0.00	           0	     0.00	2019-05-03 11:17:09.718653
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+        0.00	           0	     0.00	2019-05-03 11:17:09.718653
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+        0.00	           0	     0.00	2019-05-03 11:17:09.718653
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+        0.00	           0	     0.00	2019-05-03 11:17:09.718653
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+        0.00	           0	     0.00	2019-05-03 11:17:09.718653
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+        0.00	           0	     0.00	2019-05-03 11:17:09.718653
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+        0.00	           0	     0.00	2019-05-03 11:17:09.718653
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+        0.00	           0	     0.00	2019-05-03 11:17:09.718653
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+        0.00	           0	     0.00	2019-05-03 11:17:09.718653
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+        0.00	           0	     0.00	2019-05-03 11:17:09.718653
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+        0.00	           0	     0.00	2019-05-03 11:17:09.718653
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+        0.00	           0	     0.00	2019-05-03 11:17:09.718653
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+        0.00	           0	     0.00	2019-05-03 11:17:09.718653
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+        0.00	           0	     0.00	2019-05-03 11:17:09.718653
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+        0.00	           0	     0.00	2019-05-03 11:17:09.718653
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+        0.00	           0	     0.00	2019-05-03 11:17:09.718653
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+        0.00	           0	     0.00	2019-05-03 11:17:09.718653
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+        0.00	           0	     0.00	2019-05-03 11:17:09.718653
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+        0.00	           0	     0.00	2019-05-03 11:17:09.718653
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+        0.00	           0	     0.00	2019-05-03 11:17:09.718653
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+        0.00	           0	     0.00	2019-05-03 11:17:09.718653
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+        0.00	           0	     0.00	2019-05-03 11:17:09.718653
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+        0.00	           0	     0.00	2019-05-03 11:17:09.718653
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+        0.00	           0	     0.00	2019-05-03 11:17:09.718653
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+        0.00	           0	     0.00	2019-05-03 11:17:09.718653
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+        0.00	           0	     0.00	2019-05-03 11:17:09.718653
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+        0.00	           0	     0.00	2019-05-03 11:17:09.718653
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+        0.00	           0	     0.00	2019-05-03 11:17:09.718653
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+        0.00	           0	     0.00	2019-05-03 11:17:09.718653
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+        0.00	           0	     0.00	2019-05-03 11:17:09.718653
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+        0.00	           0	     0.00	2019-05-03 11:17:09.718653
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+        0.00	           0	     0.00	2019-05-03 11:17:09.718653
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+        0.00	           0	     0.00	2019-05-03 11:17:09.718653
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+        0.00	           0	     0.00	2019-05-03 11:17:09.718653
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+        0.00	           0	     0.00	2019-05-03 11:17:09.718653
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+        0.00	           0	     0.00	2019-05-03 11:17:09.718653
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+        0.00	           0	     0.00	2019-05-03 11:17:09.718653
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+        0.00	           0	     0.00	2019-05-03 11:17:09.718653
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+        0.00	           0	     0.00	2019-05-03 11:17:09.718653
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+        0.00	           0	     0.00	2019-05-03 11:17:09.718653
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+        0.00	           0	     0.00	2019-05-03 11:17:09.718653
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+        0.00	           0	     0.00	2019-05-03 11:17:09.718653
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+        0.00	           0	     0.00	2019-05-03 11:17:09.718653
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+        0.00	           0	     0.00	2019-05-03 11:17:09.718653
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+        0.00	           0	     0.00	2019-05-03 11:17:09.718653
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+        0.00	           0	     0.00	2019-05-03 11:17:09.718653
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+        0.00	           0	     0.00	2019-05-03 11:17:09.718653
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+        0.00	           0	     0.00	2019-05-03 11:17:09.718653
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+        0.00	           0	     0.00	2019-05-03 11:17:09.718653
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+        0.00	           0	     0.00	2019-05-03 11:17:09.718653
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+        0.00	           0	     0.00	2019-05-03 11:17:09.718653
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+        0.00	           0	     0.00	2019-05-03 11:17:09.718653
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+        0.00	           0	     0.00	2019-05-03 11:17:09.718653
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+        0.00	           0	     0.00	2019-05-03 11:17:09.718653
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+        0.00	           0	     0.00	2019-05-03 11:17:09.718653
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+        0.00	           0	     0.00	2019-05-03 11:17:09.718653
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+        0.00	           0	     0.00	2019-05-03 11:17:09.718653
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+        0.00	           0	     0.00	2019-05-03 11:17:09.718653
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+        0.00	           0	     0.00	2019-05-03 11:17:09.718653
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+        0.00	           0	     0.00	2019-05-03 11:17:09.718653
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+        0.00	           0	     0.00	2019-05-03 11:17:09.718653
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+        0.00	           0	     0.00	2019-05-03 11:17:09.718653
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+        0.00	           0	     0.00	2019-05-03 11:17:09.718653
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+        0.00	           0	     0.00	2019-05-03 11:17:09.718653
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+        0.00	           0	     0.00	2019-05-03 11:17:09.718653
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+        0.00	           0	     0.00	2019-05-03 11:17:09.718653
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+        0.00	           0	     0.00	2019-05-03 11:17:09.718653
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+        0.00	           0	     0.00	2019-05-03 11:17:09.718653
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+        0.00	           0	     0.00	2019-05-03 11:17:09.718653
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+        0.00	           0	     0.00	2019-05-03 11:17:09.718653
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+        0.00	           0	     0.00	2019-05-03 11:17:09.718653
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+        0.00	           0	     0.00	2019-05-03 11:17:09.718653
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+        0.00	           0	     0.00	2019-05-03 11:17:09.718653
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+        0.00	           0	     0.00	2019-05-03 11:17:09.718653
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+        0.00	           0	     0.00	2019-05-03 11:17:09.718653
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+        0.00	           0	     0.00	2019-05-03 11:17:09.718653
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+        0.00	           0	     0.00	2019-05-03 11:17:09.718653
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+        0.00	           0	     0.00	2019-05-03 11:17:09.718653
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+        0.00	           0	     0.00	2019-05-03 11:17:09.718653
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+        0.00	           0	     0.00	2019-05-03 11:17:09.718653
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+        0.00	           0	     0.00	2019-05-03 11:17:09.718653
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+        0.00	           0	     0.00	2019-05-03 11:17:09.718653
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+        0.00	           0	     0.00	2019-05-03 11:17:09.718653
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+        0.00	           0	     0.00	2019-05-03 11:17:09.718653
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+        0.00	           0	     0.00	2019-05-03 11:17:09.718653
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+        0.00	           0	     0.00	2019-05-03 11:17:09.718653
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+        0.00	           0	     0.00	2019-05-03 11:17:09.718653
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+        0.00	           0	     0.00	2019-05-03 11:17:09.718653
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+        0.00	           0	     0.00	2019-05-03 11:17:09.718653
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+        0.00	           0	     0.00	2019-05-03 11:17:09.718653
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+        0.00	           0	     0.00	2019-05-03 11:17:09.718653
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+        0.00	           0	     0.00	2019-05-03 11:17:09.718653
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+        0.00	           0	     0.00	2019-05-03 11:17:09.718653
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+        0.00	           0	     0.00	2019-05-03 11:17:09.718653
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+        0.00	           0	     0.00	2019-05-03 11:17:09.718653
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+        0.00	           0	     0.00	2019-05-03 11:17:09.718653
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+        0.00	           0	     0.00	2019-05-03 11:17:09.718653
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+        0.00	           0	     0.00	2019-05-03 11:17:09.718653
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+        0.00	           0	     0.00	2019-05-03 11:17:09.718653
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+        0.00	           0	     0.00	2019-05-03 11:17:09.718653
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+        0.00	           0	     0.00	2019-05-03 11:17:09.718653
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+        0.00	           0	     0.00	2019-05-03 11:17:09.718653
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+        0.00	           0	     0.00	2019-05-03 11:17:09.718653
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+        0.00	           0	     0.00	2019-05-03 11:17:09.718653
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+        0.00	           0	     0.00	2019-05-03 11:17:09.718653
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+        0.00	           0	     0.00	2019-05-03 11:17:09.718653
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+        0.00	           0	     0.00	2019-05-03 11:17:09.718653
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+        0.00	           0	     0.00	2019-05-03 11:17:09.718653
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+        0.00	           0	     0.00	2019-05-03 11:17:09.718653
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+        0.00	           0	     0.00	2019-05-03 11:17:09.718653
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+        0.00	           0	     0.00	2019-05-03 11:17:09.718653
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+        0.00	           0	     0.00	2019-05-03 11:17:09.718653
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+        0.00	           0	     0.00	2019-05-03 11:17:09.718653
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+        0.00	           0	     0.00	2019-05-03 11:17:09.718653
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+        0.00	           0	     0.00	2019-05-03 11:17:09.718653
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+        0.00	           0	     0.00	2019-05-03 11:17:09.718653
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+        0.00	           0	     0.00	2019-05-03 11:17:09.718653
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+        0.00	           0	     0.00	2019-05-03 11:17:09.718653
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+        0.00	           0	     0.00	2019-05-03 11:17:09.718653
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+        0.00	           0	     0.00	2019-05-03 11:17:09.718653
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+        0.00	           0	     0.00	2019-05-03 11:17:09.718653
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+        0.00	           0	     0.00	2019-05-03 11:17:09.718653
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+        0.00	           0	     0.00	2019-05-03 11:17:09.718653
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+        0.00	           0	     0.00	2019-05-03 11:17:09.718653
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+        0.00	           0	     0.00	2019-05-03 11:17:09.718653
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+        0.00	           0	     0.00	2019-05-03 11:17:09.718653
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+        0.00	           0	     0.00	2019-05-03 11:17:09.718653
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+        0.00	           0	     0.00	2019-05-03 11:17:09.718653
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+        0.00	           0	     0.00	2019-05-03 11:17:09.718653
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+        0.00	           0	     0.00	2019-05-03 11:17:09.718653
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+        0.00	           0	     0.00	2019-05-03 11:17:09.718653
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+        0.00	           0	     0.00	2019-05-03 11:17:09.718653
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+        0.00	           0	     0.00	2019-05-03 11:17:09.718653
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+        0.00	           0	     0.00	2019-05-03 11:17:09.718653
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+        0.00	           0	     0.00	2019-05-03 11:17:09.718653
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+        0.00	           0	     0.00	2019-05-03 11:17:09.718653
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+        0.00	           0	     0.00	2019-05-03 11:17:09.718653
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+        0.00	           0	     0.00	2019-05-03 11:17:09.718653
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+        0.00	           0	     0.00	2019-05-03 11:17:09.718653
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+        0.00	           0	     0.00	2019-05-03 11:17:09.718653
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+        0.00	           0	     0.00	2019-05-03 11:17:09.718653
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+        0.00	           0	     0.00	2019-05-03 11:17:09.718653
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+        0.00	           0	     0.00	2019-05-03 11:17:09.718653
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+        0.00	           0	     0.00	2019-05-03 11:17:09.718653
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+        0.00	           0	     0.00	2019-05-03 11:17:09.718653
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+        0.00	           0	     0.00	2019-05-03 11:17:09.718653
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+        0.00	           0	     0.00	2019-05-03 11:17:09.718653
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+        0.00	           0	     0.00	2019-05-03 11:17:09.718653
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+        0.00	           0	     0.00	2019-05-03 11:17:09.718653
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+        0.00	           0	     0.00	2019-05-03 11:17:09.718653
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+        0.00	           0	     0.00	2019-05-03 11:17:09.718653
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+        0.00	           0	     0.00	2019-05-03 11:17:09.718653
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+        0.00	           0	     0.00	2019-05-03 11:17:09.718653
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+        0.00	           0	     0.00	2019-05-03 11:17:09.718653
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+        0.00	           0	     0.00	2019-05-03 11:17:09.718653
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+        0.00	           0	     0.00	2019-05-03 11:17:09.718653
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+        0.00	           0	     0.00	2019-05-03 11:17:09.718653
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+        0.00	           0	     0.00	2019-05-03 11:17:09.718653
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+        0.00	           0	     0.00	2019-05-03 11:17:09.718653
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+        0.00	           0	     0.00	2019-05-03 11:17:09.718653
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+        0.00	           0	     0.00	2019-05-03 11:17:09.718653
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+        0.00	           0	     0.00	2019-05-03 11:17:09.718653
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+        0.00	           0	     0.00	2019-05-03 11:17:09.718653
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+        0.00	           0	     0.00	2019-05-03 11:17:09.718653
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+        0.00	           0	     0.00	2019-05-03 11:17:09.718653
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+        0.00	           0	     0.00	2019-05-03 11:17:09.718653
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+        0.00	           0	     0.00	2019-05-03 11:17:09.718653
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+        0.00	           0	     0.00	2019-05-03 11:17:09.718653
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+        0.00	           0	     0.00	2019-05-03 11:17:09.718653
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+        0.00	           0	     0.00	2019-05-03 11:17:09.718653
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+        0.00	           0	     0.00	2019-05-03 11:17:09.718653
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+        0.00	           0	     0.00	2019-05-03 11:17:09.718653
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+        0.00	           0	     0.00	2019-05-03 11:17:09.718653
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+        0.00	           0	     0.00	2019-05-03 11:17:09.718653
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+        0.00	           0	     0.00	2019-05-03 11:17:09.718653
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+        0.00	           0	     0.00	2019-05-03 11:17:09.718653
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+        0.00	           0	     0.00	2019-05-03 11:17:09.718653
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+        0.00	           0	     0.00	2019-05-03 11:17:09.718653
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+        0.00	           0	     0.00	2019-05-03 11:17:09.718653
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+        0.00	           0	     0.00	2019-05-03 11:17:09.718653
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+        0.00	           0	     0.00	2019-05-03 11:17:09.718653
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+        0.00	           0	     0.00	2019-05-03 11:17:09.718653
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+        0.00	           0	     0.00	2019-05-03 11:17:09.718653
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+        0.00	           0	     0.00	2019-05-03 11:17:09.718653
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+        0.00	           0	     0.00	2019-05-03 11:17:09.718653
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+        0.00	           0	     0.00	2019-05-03 11:17:09.718653
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+        0.00	           0	     0.00	2019-05-03 11:17:09.718653
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+        0.00	           0	     0.00	2019-05-03 11:17:09.718653
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+        0.00	           0	     0.00	2019-05-03 11:17:09.718653
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+        0.00	           0	     0.00	2019-05-03 11:17:09.718653
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+        0.00	           0	     0.00	2019-05-03 11:17:09.718653
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+        0.00	           0	     0.00	2019-05-03 11:17:09.718653
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+        0.00	           0	     0.00	2019-05-03 11:17:09.718653
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+        0.00	           0	     0.00	2019-05-03 11:17:09.718653
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+        0.00	           0	     0.00	2019-05-03 11:17:09.718653
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+        0.00	           0	     0.00	2019-05-03 11:17:09.718653
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+        0.00	           0	     0.00	2019-05-03 11:17:09.718653
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+        0.00	           0	     0.00	2019-05-03 11:17:09.718653
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+        0.00	           0	     0.00	2019-05-03 11:17:09.718653
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+        0.00	           0	     0.00	2019-05-03 11:17:09.718653
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+        0.00	           0	     0.00	2019-05-03 11:17:09.718653
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+        0.00	           0	     0.00	2019-05-03 11:17:09.718653
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+        0.00	           0	     0.00	2019-05-03 11:17:09.718653
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+        0.00	           0	     0.00	2019-05-03 11:17:09.718653
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+        0.00	           0	     0.00	2019-05-03 11:17:09.718653
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+  1000000.00	           0	     0.00	2019-05-03 11:17:09.999017
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+  1000000.00	           0	     0.00	2019-05-03 11:17:09.999017
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+  1000000.00	           0	     0.00	2019-05-03 11:17:09.999017
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+  1000000.00	           0	     0.00	2019-05-03 11:17:09.999017
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+  1000000.00	           0	     0.00	2019-05-03 11:17:09.999017
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+  1000000.00	           0	     0.00	2019-05-03 11:17:09.999017
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+  1000000.00	           0	     0.00	2019-05-03 11:17:09.999017
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+  1000000.00	           0	     0.00	2019-05-03 11:17:09.999017
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+  1000000.00	           0	     0.00	2019-05-03 11:17:09.999017
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+  1000000.00	           0	     0.00	2019-05-03 11:17:09.999017
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+  1000000.00	           0	     0.00	2019-05-03 11:17:09.999017
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+  1000000.00	           0	     0.00	2019-05-03 11:17:09.999017
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+  1000000.00	           0	     0.00	2019-05-03 11:17:09.999017
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+  1000000.00	           0	     0.00	2019-05-03 11:17:09.999017
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+  1000000.00	           0	     0.00	2019-05-03 11:17:09.999017
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+  1000000.00	           0	     0.00	2019-05-03 11:17:09.999017
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+  1000000.00	           0	     0.00	2019-05-03 11:17:09.999017
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+  1000000.00	           0	     0.00	2019-05-03 11:17:09.999017
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+  1000000.00	           0	     0.00	2019-05-03 11:17:09.999017
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+  1000000.00	           0	     0.00	2019-05-03 11:17:09.999017
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+  1000000.00	           0	     0.00	2019-05-03 11:17:09.999017
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+  1000000.00	           0	     0.00	2019-05-03 11:17:09.999017
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+  1000000.00	           0	     0.00	2019-05-03 11:17:09.999017
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+  1000000.00	           0	     0.00	2019-05-03 11:17:09.999017
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+  1000000.00	           0	     0.00	2019-05-03 11:17:09.999017
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+  1000000.00	           0	     0.00	2019-05-03 11:17:09.999017
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+  1000000.00	           0	     0.00	2019-05-03 11:17:09.999017
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-        0.00	           0	     0.00	2019-04-26 11:58:41.820990
+  1000000.00	           0	     0.00	2019-05-03 11:17:09.999017
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-  1000000.00	           0	     0.00	2019-04-26 11:58:42.189769
+  1000000.00	           0	     0.00	2019-05-03 11:17:09.999017
 
 Symbol		Shares		Price		P&L		Timestamp
 Buying Power	Total Shares	Total P&L	Timestamp
-  1000000.00	           0	     0.00	2019-04-26 11:58:42.189769
+  1000000.00	           0	     0.00	2019-05-03 11:17:09.999017
+
+Symbol		Shares		Price		P&L		Timestamp
+Buying Power	Total Shares	Total P&L	Timestamp
+  1000000.00	           0	     0.00	2019-05-03 11:17:09.999017
+
+Symbol		Shares		Price		P&L		Timestamp
+Buying Power	Total Shares	Total P&L	Timestamp
+  1000000.00	           0	     0.00	2019-05-03 11:17:09.999017
+
+Symbol		Shares		Price		P&L		Timestamp
+Buying Power	Total Shares	Total P&L	Timestamp
+  1000000.00	           0	     0.00	2019-05-03 11:17:09.999017
+
+Symbol		Shares		Price		P&L		Timestamp
+Buying Power	Total Shares	Total P&L	Timestamp
+  1000000.00	           0	     0.00	2019-05-03 11:17:09.999017
+
+Symbol		Shares		Price		P&L		Timestamp
+Buying Power	Total Shares	Total P&L	Timestamp
+  1000000.00	           0	     0.00	2019-05-03 11:17:09.999017
+
+Symbol		Shares		Price		P&L		Timestamp
+Buying Power	Total Shares	Total P&L	Timestamp
+  1000000.00	           0	     0.00	2019-05-03 11:17:09.999017
+
+Symbol		Shares		Price		P&L		Timestamp
+Buying Power	Total Shares	Total P&L	Timestamp
+  1000000.00	           0	     0.00	2019-05-03 11:17:09.999017
+
+Symbol		Shares		Price		P&L		Timestamp
+Buying Power	Total Shares	Total P&L	Timestamp
+  1000000.00	           0	     0.00	2019-05-03 11:17:09.999017
+
+Symbol		Shares		Price		P&L		Timestamp
+Buying Power	Total Shares	Total P&L	Timestamp
+  1000000.00	           0	     0.00	2019-05-03 11:17:09.999017
+
+Symbol		Shares		Price		P&L		Timestamp
+Buying Power	Total Shares	Total P&L	Timestamp
+  1000000.00	           0	     0.00	2019-05-03 11:17:09.999017
+
+Symbol		Shares		Price		P&L		Timestamp
+Buying Power	Total Shares	Total P&L	Timestamp
+  1000000.00	           0	     0.00	2019-05-03 11:17:09.999017
+
+Symbol		Shares		Price		P&L		Timestamp
+Buying Power	Total Shares	Total P&L	Timestamp
+  1000000.00	           0	     0.00	2019-05-03 11:17:09.999017
+
+Symbol		Shares		Price		P&L		Timestamp
+Buying Power	Total Shares	Total P&L	Timestamp
+  1000000.00	           0	     0.00	2019-05-03 11:17:09.999017
+
+Symbol		Shares		Price		P&L		Timestamp
+Buying Power	Total Shares	Total P&L	Timestamp
+  1000000.00	           0	     0.00	2019-05-03 11:17:09.999017
+
+Symbol		Shares		Price		P&L		Timestamp
+Buying Power	Total Shares	Total P&L	Timestamp
+  1000000.00	           0	     0.00	2019-05-03 11:17:09.999017
+
+Symbol		Shares		Price		P&L		Timestamp
+Buying Power	Total Shares	Total P&L	Timestamp
+  1000000.00	           0	     0.00	2019-05-03 11:17:09.999017
+
+Symbol		Shares		Price		P&L		Timestamp
+Buying Power	Total Shares	Total P&L	Timestamp
+  1000000.00	           0	     0.00	2019-05-03 11:17:09.999017
+
+Symbol		Shares		Price		P&L		Timestamp
+Buying Power	Total Shares	Total P&L	Timestamp
+  1000000.00	           0	     0.00	2019-05-03 11:17:09.999017
+
+Symbol		Shares		Price		P&L		Timestamp
+Buying Power	Total Shares	Total P&L	Timestamp
+  1000000.00	           0	     0.00	2019-05-03 11:17:09.999017
+
+Symbol		Shares		Price		P&L		Timestamp
+Buying Power	Total Shares	Total P&L	Timestamp
+  1000000.00	           0	     0.00	2019-05-03 11:17:09.999017
+
+Symbol		Shares		Price		P&L		Timestamp
+Buying Power	Total Shares	Total P&L	Timestamp
+  1000000.00	           0	     0.00	2019-05-03 11:17:09.999017
+
+Symbol		Shares		Price		P&L		Timestamp
+Buying Power	Total Shares	Total P&L	Timestamp
+  1000000.00	           0	     0.00	2019-05-03 11:17:09.999017
+
+Symbol		Shares		Price		P&L		Timestamp
+Buying Power	Total Shares	Total P&L	Timestamp
+  1000000.00	           0	     0.00	2019-05-03 11:17:09.999017
+
+Symbol		Shares		Price		P&L		Timestamp
+Buying Power	Total Shares	Total P&L	Timestamp
+  1000000.00	           0	     0.00	2019-05-03 11:17:09.999017
+
+Symbol		Shares		Price		P&L		Timestamp
+Buying Power	Total Shares	Total P&L	Timestamp
+  1000000.00	           0	     0.00	2019-05-03 11:17:09.999017
+
+Symbol		Shares		Price		P&L		Timestamp
+Buying Power	Total Shares	Total P&L	Timestamp
+  1000000.00	           0	     0.00	2019-05-03 11:17:09.999017
+
+Symbol		Shares		Price		P&L		Timestamp
+Buying Power	Total Shares	Total P&L	Timestamp
+  1000000.00	           0	     0.00	2019-05-03 11:17:09.999017
+
+Symbol		Shares		Price		P&L		Timestamp
+Buying Power	Total Shares	Total P&L	Timestamp
+  1000000.00	           0	     0.00	2019-05-03 11:17:09.999017
+
+Symbol		Shares		Price		P&L		Timestamp
+Buying Power	Total Shares	Total P&L	Timestamp
+  1000000.00	           0	     0.00	2019-05-03 11:17:09.999017
+
+Symbol		Shares		Price		P&L		Timestamp
+Buying Power	Total Shares	Total P&L	Timestamp
+  1000000.00	           0	     0.00	2019-05-03 11:17:09.999017
+
+Symbol		Shares		Price		P&L		Timestamp
+Buying Power	Total Shares	Total P&L	Timestamp
+  1000000.00	           0	     0.00	2019-05-03 11:17:09.999017
+
+Symbol		Shares		Price		P&L		Timestamp
+Buying Power	Total Shares	Total P&L	Timestamp
+  1000000.00	           0	     0.00	2019-05-03 11:17:09.999017
+
+Symbol		Shares		Price		P&L		Timestamp
+Buying Power	Total Shares	Total P&L	Timestamp
+  1000000.00	           0	     0.00	2019-05-03 11:17:09.999017
+
+Symbol		Shares		Price		P&L		Timestamp
+Buying Power	Total Shares	Total P&L	Timestamp
+  1000000.00	           0	     0.00	2019-05-03 11:17:09.999017
+
+Symbol		Shares		Price		P&L		Timestamp
+Buying Power	Total Shares	Total P&L	Timestamp
+  1000000.00	           0	     0.00	2019-05-03 11:17:09.999017
+
+Symbol		Shares		Price		P&L		Timestamp
+Buying Power	Total Shares	Total P&L	Timestamp
+  1000000.00	           0	     0.00	2019-05-03 11:17:09.999017
+
+Symbol		Shares		Price		P&L		Timestamp
+Buying Power	Total Shares	Total P&L	Timestamp
+  1000000.00	           0	     0.00	2019-05-03 11:17:09.999017
+
+Symbol		Shares		Price		P&L		Timestamp
+Buying Power	Total Shares	Total P&L	Timestamp
+  1000000.00	           0	     0.00	2019-05-03 11:17:09.999017
+
+Symbol		Shares		Price		P&L		Timestamp
+Buying Power	Total Shares	Total P&L	Timestamp
+  1000000.00	           0	     0.00	2019-05-03 11:17:09.999017
+
+Symbol		Shares		Price		P&L		Timestamp
+Buying Power	Total Shares	Total P&L	Timestamp
+  1000000.00	           0	     0.00	2019-05-03 11:17:09.999017
+
+Symbol		Shares		Price		P&L		Timestamp
+Buying Power	Total Shares	Total P&L	Timestamp
+  1000000.00	           0	     0.00	2019-05-03 11:17:09.999017
+
+Symbol		Shares		Price		P&L		Timestamp
+Buying Power	Total Shares	Total P&L	Timestamp
+  1000000.00	           0	     0.00	2019-05-03 11:17:09.999017
+
+Symbol		Shares		Price		P&L		Timestamp
+Buying Power	Total Shares	Total P&L	Timestamp
+  1000000.00	           0	     0.00	2019-05-03 11:17:09.999017
+
+Symbol		Shares		Price		P&L		Timestamp
+Buying Power	Total Shares	Total P&L	Timestamp
+  1000000.00	           0	     0.00	2019-05-03 11:17:09.999017
+
+Symbol		Shares		Price		P&L		Timestamp
+Buying Power	Total Shares	Total P&L	Timestamp
+  1000000.00	           0	     0.00	2019-05-03 11:17:09.999017
+
+Symbol		Shares		Price		P&L		Timestamp
+Buying Power	Total Shares	Total P&L	Timestamp
+  1000000.00	           0	     0.00	2019-05-03 11:17:09.999017
+
+Symbol		Shares		Price		P&L		Timestamp
+Buying Power	Total Shares	Total P&L	Timestamp
+  1000000.00	           0	     0.00	2019-05-03 11:17:09.999017
+
+Symbol		Shares		Price		P&L		Timestamp
+Buying Power	Total Shares	Total P&L	Timestamp
+  1000000.00	           0	     0.00	2019-05-03 11:17:09.999017
+
+Symbol		Shares		Price		P&L		Timestamp
+Buying Power	Total Shares	Total P&L	Timestamp
+  1000000.00	           0	     0.00	2019-05-03 11:17:09.999017
+
+Symbol		Shares		Price		P&L		Timestamp
+Buying Power	Total Shares	Total P&L	Timestamp
+  1000000.00	           0	     0.00	2019-05-03 11:17:09.999017
+
+Symbol		Shares		Price		P&L		Timestamp
+Buying Power	Total Shares	Total P&L	Timestamp
+  1000000.00	           0	     0.00	2019-05-03 11:17:09.999017
+
+Symbol		Shares		Price		P&L		Timestamp
+Buying Power	Total Shares	Total P&L	Timestamp
+  1000000.00	           0	     0.00	2019-05-03 11:17:09.999017
+
+Symbol		Shares		Price		P&L		Timestamp
+Buying Power	Total Shares	Total P&L	Timestamp
+  1000000.00	           0	     0.00	2019-05-03 11:17:09.999017
+
+Symbol		Shares		Price		P&L		Timestamp
+Buying Power	Total Shares	Total P&L	Timestamp
+  1000000.00	           0	     0.00	2019-05-03 11:17:09.999017
+
+Symbol		Shares		Price		P&L		Timestamp
+Buying Power	Total Shares	Total P&L	Timestamp
+  1000000.00	           0	     0.00	2019-05-03 11:17:09.999017
+
+Symbol		Shares		Price		P&L		Timestamp
+Buying Power	Total Shares	Total P&L	Timestamp
+  1000000.00	           0	     0.00	2019-05-03 11:17:09.999017
+
+Symbol		Shares		Price		P&L		Timestamp
+Buying Power	Total Shares	Total P&L	Timestamp
+  1000000.00	           0	     0.00	2019-05-03 11:17:09.999017
+
+Symbol		Shares		Price		P&L		Timestamp
+Buying Power	Total Shares	Total P&L	Timestamp
+  1000000.00	           0	     0.00	2019-05-03 11:17:09.999017
+
+Symbol		Shares		Price		P&L		Timestamp
+Buying Power	Total Shares	Total P&L	Timestamp
+  1000000.00	           0	     0.00	2019-05-03 11:17:09.999017
+
+Symbol		Shares		Price		P&L		Timestamp
+Buying Power	Total Shares	Total P&L	Timestamp
+  1000000.00	           0	     0.00	2019-05-03 11:17:09.999017
+
+Symbol		Shares		Price		P&L		Timestamp
+Buying Power	Total Shares	Total P&L	Timestamp
+  1000000.00	           0	     0.00	2019-05-03 11:17:09.999017
+
+Symbol		Shares		Price		P&L		Timestamp
+Buying Power	Total Shares	Total P&L	Timestamp
+  1000000.00	           0	     0.00	2019-05-03 11:17:09.999017
+
+Symbol		Shares		Price		P&L		Timestamp
+Buying Power	Total Shares	Total P&L	Timestamp
+  1000000.00	           0	     0.00	2019-05-03 11:17:09.999017
+
+Symbol		Shares		Price		P&L		Timestamp
+Buying Power	Total Shares	Total P&L	Timestamp
+  1000000.00	           0	     0.00	2019-05-03 11:17:09.999017
+
+Symbol		Shares		Price		P&L		Timestamp
+Buying Power	Total Shares	Total P&L	Timestamp
+  1000000.00	           0	     0.00	2019-05-03 11:17:09.999017
+
+Symbol		Shares		Price		P&L		Timestamp
+Buying Power	Total Shares	Total P&L	Timestamp
+  1000000.00	           0	     0.00	2019-05-03 11:17:09.999017
+
+Symbol		Shares		Price		P&L		Timestamp
+Buying Power	Total Shares	Total P&L	Timestamp
+  1000000.00	           0	     0.00	2019-05-03 11:17:09.999017
+
+Symbol		Shares		Price		P&L		Timestamp
+Buying Power	Total Shares	Total P&L	Timestamp
+  1000000.00	           0	     0.00	2019-05-03 11:17:09.999017
+
+Symbol		Shares		Price		P&L		Timestamp
+Buying Power	Total Shares	Total P&L	Timestamp
+  1000000.00	           0	     0.00	2019-05-03 11:17:09.999017
+
+Symbol		Shares		Price		P&L		Timestamp
+Buying Power	Total Shares	Total P&L	Timestamp
+  1000000.00	           0	     0.00	2019-05-03 11:17:09.999017
+
+Symbol		Shares		Price		P&L		Timestamp
+Buying Power	Total Shares	Total P&L	Timestamp
+  1000000.00	           0	     0.00	2019-05-03 11:17:09.999017
+
+Symbol		Shares		Price		P&L		Timestamp
+Buying Power	Total Shares	Total P&L	Timestamp
+  1000000.00	           0	     0.00	2019-05-03 11:17:09.999017
+
+Symbol		Shares		Price		P&L		Timestamp
+Buying Power	Total Shares	Total P&L	Timestamp
+  1000000.00	           0	     0.00	2019-05-03 11:17:09.999017
+
+Symbol		Shares		Price		P&L		Timestamp
+Buying Power	Total Shares	Total P&L	Timestamp
+  1000000.00	           0	     0.00	2019-05-03 11:17:09.999017
+
+Symbol		Shares		Price		P&L		Timestamp
+Buying Power	Total Shares	Total P&L	Timestamp
+  1000000.00	           0	     0.00	2019-05-03 11:17:09.999017
+
+Symbol		Shares		Price		P&L		Timestamp
+Buying Power	Total Shares	Total P&L	Timestamp
+  1000000.00	           0	     0.00	2019-05-03 11:17:09.999017
+
+Symbol		Shares		Price		P&L		Timestamp
+Buying Power	Total Shares	Total P&L	Timestamp
+  1000000.00	           0	     0.00	2019-05-03 11:17:09.999017
+
+Symbol		Shares		Price		P&L		Timestamp
+Buying Power	Total Shares	Total P&L	Timestamp
+  1000000.00	           0	     0.00	2019-05-03 11:17:09.999017
+
+Symbol		Shares		Price		P&L		Timestamp
+Buying Power	Total Shares	Total P&L	Timestamp
+  1000000.00	           0	     0.00	2019-05-03 11:17:09.999017
+
+Symbol		Shares		Price		P&L		Timestamp
+Buying Power	Total Shares	Total P&L	Timestamp
+  1000000.00	           0	     0.00	2019-05-03 11:17:09.999017
+
+Symbol		Shares		Price		P&L		Timestamp
+Buying Power	Total Shares	Total P&L	Timestamp
+  1000000.00	           0	     0.00	2019-05-03 11:17:09.999017
+
+Symbol		Shares		Price		P&L		Timestamp
+Buying Power	Total Shares	Total P&L	Timestamp
+  1000000.00	           0	     0.00	2019-05-03 11:17:09.999017
+
+Symbol		Shares		Price		P&L		Timestamp
+Buying Power	Total Shares	Total P&L	Timestamp
+  1000000.00	           0	     0.00	2019-05-03 11:17:09.999017
+
+Symbol		Shares		Price		P&L		Timestamp
+Buying Power	Total Shares	Total P&L	Timestamp
+  1000000.00	           0	     0.00	2019-05-03 11:17:09.999017
+
+Symbol		Shares		Price		P&L		Timestamp
+Buying Power	Total Shares	Total P&L	Timestamp
+  1000000.00	           0	     0.00	2019-05-03 11:17:09.999017
+
+Symbol		Shares		Price		P&L		Timestamp
+Buying Power	Total Shares	Total P&L	Timestamp
+  1000000.00	           0	     0.00	2019-05-03 11:17:09.999017
+
+Symbol		Shares		Price		P&L		Timestamp
+Buying Power	Total Shares	Total P&L	Timestamp
+  1000000.00	           0	     0.00	2019-05-03 11:17:09.999017
+
+Symbol		Shares		Price		P&L		Timestamp
+Buying Power	Total Shares	Total P&L	Timestamp
+  1000000.00	           0	     0.00	2019-05-03 11:17:09.999017
+
+Symbol		Shares		Price		P&L		Timestamp
+Buying Power	Total Shares	Total P&L	Timestamp
+  1000000.00	           0	     0.00	2019-05-03 11:17:09.999017
+
+Symbol		Shares		Price		P&L		Timestamp
+Buying Power	Total Shares	Total P&L	Timestamp
+  1000000.00	           0	     0.00	2019-05-03 11:17:09.999017
+
+Symbol		Shares		Price		P&L		Timestamp
+Buying Power	Total Shares	Total P&L	Timestamp
+  1000000.00	           0	     0.00	2019-05-03 11:17:09.999017
+
+Symbol		Shares		Price		P&L		Timestamp
+Buying Power	Total Shares	Total P&L	Timestamp
+  1000000.00	           0	     0.00	2019-05-03 11:17:09.999017
+
+Symbol		Shares		Price		P&L		Timestamp
+Buying Power	Total Shares	Total P&L	Timestamp
+  1000000.00	           0	     0.00	2019-05-03 11:17:09.999017
+
+Symbol		Shares		Price		P&L		Timestamp
+Buying Power	Total Shares	Total P&L	Timestamp
+  1000000.00	           0	     0.00	2019-05-03 11:17:09.999017
+
+Symbol		Shares		Price		P&L		Timestamp
+Buying Power	Total Shares	Total P&L	Timestamp
+  1000000.00	           0	     0.00	2019-05-03 11:17:09.999017
+
+Symbol		Shares		Price		P&L		Timestamp
+Buying Power	Total Shares	Total P&L	Timestamp
+  1000000.00	           0	     0.00	2019-05-03 11:17:09.999017
+
+Symbol		Shares		Price		P&L		Timestamp
+Buying Power	Total Shares	Total P&L	Timestamp
+  1000000.00	           0	     0.00	2019-05-03 11:17:09.999017
+
+Symbol		Shares		Price		P&L		Timestamp
+Buying Power	Total Shares	Total P&L	Timestamp
+  1000000.00	           0	     0.00	2019-05-03 11:17:09.999017
+
+Symbol		Shares		Price		P&L		Timestamp
+Buying Power	Total Shares	Total P&L	Timestamp
+  1000000.00	           0	     0.00	2019-05-03 11:17:09.999017
+
+Symbol		Shares		Price		P&L		Timestamp
+Buying Power	Total Shares	Total P&L	Timestamp
+  1000000.00	           0	     0.00	2019-05-03 11:17:09.999017
+
+Symbol		Shares		Price		P&L		Timestamp
+Buying Power	Total Shares	Total P&L	Timestamp
+  1000000.00	           0	     0.00	2019-05-03 11:17:09.999017
+
+Symbol		Shares		Price		P&L		Timestamp
+Buying Power	Total Shares	Total P&L	Timestamp
+  1000000.00	           0	     0.00	2019-05-03 11:17:09.999017
+
+Symbol		Shares		Price		P&L		Timestamp
+Buying Power	Total Shares	Total P&L	Timestamp
+  1000000.00	           0	     0.00	2019-05-03 11:17:09.999017
+
+Symbol		Shares		Price		P&L		Timestamp
+Buying Power	Total Shares	Total P&L	Timestamp
+  1000000.00	           0	     0.00	2019-05-03 11:17:09.999017
+
+Symbol		Shares		Price		P&L		Timestamp
+Buying Power	Total Shares	Total P&L	Timestamp
+  1000000.00	           0	     0.00	2019-05-03 11:17:09.999017
+
+Symbol		Shares		Price		P&L		Timestamp
+Buying Power	Total Shares	Total P&L	Timestamp
+  1000000.00	           0	     0.00	2019-05-03 11:17:09.999017
+
+Symbol		Shares		Price		P&L		Timestamp
+Buying Power	Total Shares	Total P&L	Timestamp
+  1000000.00	           0	     0.00	2019-05-03 11:17:09.999017
+
+Symbol		Shares		Price		P&L		Timestamp
+Buying Power	Total Shares	Total P&L	Timestamp
+  1000000.00	           0	     0.00	2019-05-03 11:17:09.999017
+
+Symbol		Shares		Price		P&L		Timestamp
+Buying Power	Total Shares	Total P&L	Timestamp
+  1000000.00	           0	     0.00	2019-05-03 11:17:09.999017
+
+Symbol		Shares		Price		P&L		Timestamp
+Buying Power	Total Shares	Total P&L	Timestamp
+  1000000.00	           0	     0.00	2019-05-03 11:17:09.999017
+
+Symbol		Shares		Price		P&L		Timestamp
+Buying Power	Total Shares	Total P&L	Timestamp
+  1000000.00	           0	     0.00	2019-05-03 11:17:09.999017
+
+Symbol		Shares		Price		P&L		Timestamp
+Buying Power	Total Shares	Total P&L	Timestamp
+  1000000.00	           0	     0.00	2019-05-03 11:17:09.999017
+
+Symbol		Shares		Price		P&L		Timestamp
+Buying Power	Total Shares	Total P&L	Timestamp
+  1000000.00	           0	     0.00	2019-05-03 11:17:09.999017
+
+Symbol		Shares		Price		P&L		Timestamp
+Buying Power	Total Shares	Total P&L	Timestamp
+  1000000.00	           0	     0.00	2019-05-03 11:17:09.999017
+
+Symbol		Shares		Price		P&L		Timestamp
+Buying Power	Total Shares	Total P&L	Timestamp
+  1000000.00	           0	     0.00	2019-05-03 11:17:09.999017
+
+Symbol		Shares		Price		P&L		Timestamp
+Buying Power	Total Shares	Total P&L	Timestamp
+  1000000.00	           0	     0.00	2019-05-03 11:17:09.999017
+
+Symbol		Shares		Price		P&L		Timestamp
+Buying Power	Total Shares	Total P&L	Timestamp
+  1000000.00	           0	     0.00	2019-05-03 11:17:09.999017
+
+Symbol		Shares		Price		P&L		Timestamp
+Buying Power	Total Shares	Total P&L	Timestamp
+  1000000.00	           0	     0.00	2019-05-03 11:17:09.999017
+
+Symbol		Shares		Price		P&L		Timestamp
+Buying Power	Total Shares	Total P&L	Timestamp
+  1000000.00	           0	     0.00	2019-05-03 11:17:09.999017
+
+Symbol		Shares		Price		P&L		Timestamp
+Buying Power	Total Shares	Total P&L	Timestamp
+  1000000.00	           0	     0.00	2019-05-03 11:17:09.999017
+
+Symbol		Shares		Price		P&L		Timestamp
+Buying Power	Total Shares	Total P&L	Timestamp
+  1000000.00	           0	     0.00	2019-05-03 11:17:09.999017
+
+Symbol		Shares		Price		P&L		Timestamp
+Buying Power	Total Shares	Total P&L	Timestamp
+  1000000.00	           0	     0.00	2019-05-03 11:17:09.999017
+
+Symbol		Shares		Price		P&L		Timestamp
+Buying Power	Total Shares	Total P&L	Timestamp
+  1000000.00	           0	     0.00	2019-05-03 11:17:09.999017
+
+Symbol		Shares		Price		P&L		Timestamp
+Buying Power	Total Shares	Total P&L	Timestamp
+  1000000.00	           0	     0.00	2019-05-03 11:17:09.999017
+
+Symbol		Shares		Price		P&L		Timestamp
+Buying Power	Total Shares	Total P&L	Timestamp
+  1000000.00	           0	     0.00	2019-05-03 11:17:09.999017
+
+Symbol		Shares		Price		P&L		Timestamp
+Buying Power	Total Shares	Total P&L	Timestamp
+  1000000.00	           0	     0.00	2019-05-03 11:17:09.999017
+
+Symbol		Shares		Price		P&L		Timestamp
+Buying Power	Total Shares	Total P&L	Timestamp
+  1000000.00	           0	     0.00	2019-05-03 11:17:09.999017
+
+Symbol		Shares		Price		P&L		Timestamp
+Buying Power	Total Shares	Total P&L	Timestamp
+  1000000.00	           0	     0.00	2019-05-03 11:17:09.999017
+
+Symbol		Shares		Price		P&L		Timestamp
+Buying Power	Total Shares	Total P&L	Timestamp
+  1000000.00	           0	     0.00	2019-05-03 11:17:09.999017
+
+Symbol		Shares		Price		P&L		Timestamp
+Buying Power	Total Shares	Total P&L	Timestamp
+  1000000.00	           0	     0.00	2019-05-03 11:17:09.999017
+
+Symbol		Shares		Price		P&L		Timestamp
+Buying Power	Total Shares	Total P&L	Timestamp
+  1000000.00	           0	     0.00	2019-05-03 11:17:09.999017
+
+Symbol		Shares		Price		P&L		Timestamp
+Buying Power	Total Shares	Total P&L	Timestamp
+  1000000.00	           0	     0.00	2019-05-03 11:17:09.999017
+
+Symbol		Shares		Price		P&L		Timestamp
+Buying Power	Total Shares	Total P&L	Timestamp
+  1000000.00	           0	     0.00	2019-05-03 11:17:09.999017
+
+Symbol		Shares		Price		P&L		Timestamp
+Buying Power	Total Shares	Total P&L	Timestamp
+  1000000.00	           0	     0.00	2019-05-03 11:17:09.999017
+
+Symbol		Shares		Price		P&L		Timestamp
+Buying Power	Total Shares	Total P&L	Timestamp
+  1000000.00	           0	     0.00	2019-05-03 11:17:09.999017
+
+Symbol		Shares		Price		P&L		Timestamp
+Buying Power	Total Shares	Total P&L	Timestamp
+  1000000.00	           0	     0.00	2019-05-03 11:17:09.999017
+
+Symbol		Shares		Price		P&L		Timestamp
+Buying Power	Total Shares	Total P&L	Timestamp
+  1000000.00	           0	     0.00	2019-05-03 11:17:09.999017
+
+Symbol		Shares		Price		P&L		Timestamp
+Buying Power	Total Shares	Total P&L	Timestamp
+  1000000.00	           0	     0.00	2019-05-03 11:17:09.999017
+
+Symbol		Shares		Price		P&L		Timestamp
+Buying Power	Total Shares	Total P&L	Timestamp
+  1000000.00	           0	     0.00	2019-05-03 11:17:09.999017
+
+Symbol		Shares		Price		P&L		Timestamp
+Buying Power	Total Shares	Total P&L	Timestamp
+  1000000.00	           0	     0.00	2019-05-03 11:17:09.999017
+
+Symbol		Shares		Price		P&L		Timestamp
+Buying Power	Total Shares	Total P&L	Timestamp
+  1000000.00	           0	     0.00	2019-05-03 11:17:09.999017
+
+Symbol		Shares		Price		P&L		Timestamp
+Buying Power	Total Shares	Total P&L	Timestamp
+  1000000.00	           0	     0.00	2019-05-03 11:17:09.999017
+
+Symbol		Shares		Price		P&L		Timestamp
+Buying Power	Total Shares	Total P&L	Timestamp
+  1000000.00	           0	     0.00	2019-05-03 11:17:09.999017
+
+Symbol		Shares		Price		P&L		Timestamp
+Buying Power	Total Shares	Total P&L	Timestamp
+  1000000.00	           0	     0.00	2019-05-03 11:17:09.999017
+
+Symbol		Shares		Price		P&L		Timestamp
+Buying Power	Total Shares	Total P&L	Timestamp
+  1000000.00	           0	     0.00	2019-05-03 11:17:09.999017
+
+Symbol		Shares		Price		P&L		Timestamp
+Buying Power	Total Shares	Total P&L	Timestamp
+  1000000.00	           0	     0.00	2019-05-03 11:17:09.999017
+
+Symbol		Shares		Price		P&L		Timestamp
+Buying Power	Total Shares	Total P&L	Timestamp
+  1000000.00	           0	     0.00	2019-05-03 11:17:09.999017
+
+Symbol		Shares		Price		P&L		Timestamp
+Buying Power	Total Shares	Total P&L	Timestamp
+  1000000.00	           0	     0.00	2019-05-03 11:17:09.999017
+
+Symbol		Shares		Price		P&L		Timestamp
+Buying Power	Total Shares	Total P&L	Timestamp
+  1000000.00	           0	     0.00	2019-05-03 11:17:09.999017
+
+Symbol		Shares		Price		P&L		Timestamp
+Buying Power	Total Shares	Total P&L	Timestamp
+  1000000.00	           0	     0.00	2019-05-03 11:17:09.999017
+
+Symbol		Shares		Price		P&L		Timestamp
+Buying Power	Total Shares	Total P&L	Timestamp
+  1000000.00	           0	     0.00	2019-05-03 11:17:09.999017
+
+Symbol		Shares		Price		P&L		Timestamp
+Buying Power	Total Shares	Total P&L	Timestamp
+  1000000.00	           0	     0.00	2019-05-03 11:17:09.999017
+
+Symbol		Shares		Price		P&L		Timestamp
+Buying Power	Total Shares	Total P&L	Timestamp
+  1000000.00	           0	     0.00	2019-05-03 11:17:09.999017
+
+Symbol		Shares		Price		P&L		Timestamp
+Buying Power	Total Shares	Total P&L	Timestamp
+  1000000.00	           0	     0.00	2019-05-03 11:17:09.999017
+
+Symbol		Shares		Price		P&L		Timestamp
+Buying Power	Total Shares	Total P&L	Timestamp
+  1000000.00	           0	     0.00	2019-05-03 11:17:09.999017
+
+Symbol		Shares		Price		P&L		Timestamp
+Buying Power	Total Shares	Total P&L	Timestamp
+  1000000.00	           0	     0.00	2019-05-03 11:17:09.999017
+
+Symbol		Shares		Price		P&L		Timestamp
+Buying Power	Total Shares	Total P&L	Timestamp
+  1000000.00	           0	     0.00	2019-05-03 11:17:09.999017
 
 Symbol		Shares		Price		P&L		Timestamp
